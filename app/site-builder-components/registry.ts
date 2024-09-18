@@ -18,8 +18,8 @@ export { default as NewsletterSignup } from "./Forms/NewsletterSignup";
 export { default as FormField } from "./Forms/FormField";
 
 // // Grid
-// export { default as ResponsiveGrid } from "./Grid/ResponsiveGrid";
-// export { default as Section } from "./Grid/Section";
+export { default as ResponsiveGrid } from "./Grid/ResponsiveGrid";
+export { default as Section } from "./Grid/Section";
 
 // // Hero
 // export { default as HeroBanner } from "./Hero/HeroBanner";
