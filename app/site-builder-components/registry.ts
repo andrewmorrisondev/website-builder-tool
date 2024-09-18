@@ -46,8 +46,8 @@ export { default as PricingTable } from "./PricingTable/PricingTable";
 export { default as MetaTags } from "./SEO/MetaTags";
 
 // // Social
-// export { default as SocialShareButtons } from "./Social/SocialShareButtons";
-// export { default as SocialFollowButtons } from "./Social/SocialFollowButtons";
+export { default as SocialShareButtons } from "./Social/SocialShareButtons";
+export { default as SocialFollowButtons } from "./Social/SocialFollowButtons";
 
 // // Typography
 // export { default as Heading } from "./Typography/Heading";

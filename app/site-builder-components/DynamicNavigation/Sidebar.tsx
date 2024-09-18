@@ -1,4 +1,3 @@
-// components/Sidebar/Sidebar.tsx
 "use client";
 import React, { useState, ReactNode } from "react";
 import { Drawer, Box } from "@mui/material";
@@ -11,14 +10,14 @@ interface SidebarProps {
   isDrawerOpen?: boolean; // Controls if the drawer is open (optional, defaults to false)
   toggleDrawer?: (open: boolean) => () => void; // Function to toggle the drawer open/close state (optional, default provided)
   drawerWidth?: number; // Width of the drawer in pixels (optional, defaults to 240)
-  children?: ReactNode; // Children elements to render inside the drawer
+  children: ReactNode; // Children elements to render inside the drawer
 }
 
 const Sidebar = ({
   isDrawerOpen: isDrawerOpenProp, // Optional, controlled state for the drawer open/close
   toggleDrawer: toggleDrawerProp, // Optional function to toggle drawer
   drawerWidth = 240, // Default width of the drawer if not provided
-  children, // Optional children to be rendered inside the drawer
+  children, // Children to be rendered inside the drawer
 }: SidebarProps): JSX.Element => {
   // Local state if isDrawerOpen is not passed as a prop
   const [isDrawerOpen, setDrawerOpen] = useState<boolean>(
@@ -39,7 +38,13 @@ const Sidebar = ({
       <IconButton
         icon={<MenuIcon />}
         onClick={toggleDrawer(true)}
-        sx={{ margin: "1rem", marginRight: "2rem" }}
+        sx={{
+          margin: "1rem",
+          marginRight: "2rem",
+          position: "fixed",
+          zIndex: 1300,
+          display: isDrawerOpen ? "none" : "block", // Hide button when drawer is open
+        }}
       />
 
       <Drawer
@@ -73,7 +78,7 @@ const Sidebar = ({
             {/* Close button inside the drawer */}
             <IconButton icon={<CloseIcon />} onClick={toggleDrawer(false)} />
           </Box>
-          {/* Render the children passed to Sidebar */}
+          {/* Render the children inside the drawer */}
           <Box sx={{ paddingTop: "1rem" }}>{children}</Box>
         </div>
       </Drawer>
