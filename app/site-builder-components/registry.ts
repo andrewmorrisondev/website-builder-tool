@@ -26,9 +26,9 @@ export { default as HeroBanner } from "./Hero/HeroBanner";
 export { default as Carousel } from "./Hero/Carousel";
 
 // // Layout
-// export { default as Header } from "./Layout/Header";
-// export { default as Footer } from "./Layout/Footer";
-// export { default as Container } from "./Layout/Container";
+export { default as Header } from "./Layout/Header";
+export { default as Footer } from "./Layout/Footer";
+export { default as Container } from "./Layout/Container";
 
 // // Media
 // export { default as ImageGallery } from "./Media/ImageGallery";
