@@ -8,7 +8,8 @@ export { default as TestimonialCard } from "./Cards/TestimonialCard";
 export { default as ImageCard } from "./Cards/ImageCard";
 
 // // DynamicNavigation
-// export { default as FloatingActionButton } from "./DynamicNavigation/FloatingActionButton";
+export { default as FloatingActionButton } from "./DynamicNavigation/FloatingActionButton";
+export { default as SpeedDialMenu } from "./DynamicNavigation/SpeedDialMenu";
 // export { default as Sidebar } from "./DynamicNavigation/Sidebar";
 
 // // Forms

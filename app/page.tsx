@@ -1,11 +1,24 @@
 "use client";
 import "./globals.css";
-import { TestimonialCard } from "./site-builder-components/registry";
+import { SpeedDialMenu } from "./site-builder-components/registry";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 
-export default function Home(): JSX.Element {
+const Home = (): JSX.Element => {
+  const actions = [
+    { icon: <EditIcon />, name: "Edit", onClick: () => console.log("Edit") },
+    {
+      icon: <DeleteIcon />,
+      name: "Delete",
+      onClick: () => console.log("Delete"),
+    },
+  ];
+
   return (
     <>
-      <TestimonialCard testimonial="this company is good" authorName="author" />
+      <SpeedDialMenu actions={actions} />
     </>
   );
-}
+};
+
+export default Home;
