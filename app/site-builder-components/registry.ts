@@ -5,7 +5,7 @@ export { default as IconButton } from "./Buttons/IconButton";
 // // Cards
 export { default as InfoCard } from "./Cards/InfoCard";
 // export { default as TestimonialCard } from "./Cards/TestimonialCard";
-// export { default as ImageCard } from "./Cards/ImageCard";
+export { default as ImageCard } from "./Cards/ImageCard";
 
 // // DynamicNavigation
 // export { default as FloatingActionButton } from "./DynamicNavigation/FloatingActionButton";
