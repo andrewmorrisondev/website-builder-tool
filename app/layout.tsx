@@ -1,12 +1,9 @@
-import type { Metadata } from "next";
+"use client";
 import "./globals.css";
+import Link from "next/link";
 import { CustomThemeProvider } from "./context/ThemeContext";
 import { CssBaseline } from "@mui/material";
-
-export const metadata: Metadata = {
-  title: "Andrew Morrison | Software Engineer",
-  description: "Andrew Morrison's Portfolio Website",
-};
+import { Sidebar, CTAButton } from "./site-builder-components/registry";
 
 export default function RootLayout({
   children,
@@ -18,6 +15,14 @@ export default function RootLayout({
       <body>
         <CustomThemeProvider>
           <CssBaseline />
+          <Sidebar>
+            <Link href="/" passHref>
+              <CTAButton label="Home" variant="contained" color="primary" />
+            </Link>
+            <Link href="/about" passHref>
+              <CTAButton label="About" variant="outlined" color="secondary" />
+            </Link>
+          </Sidebar>
           {children}
         </CustomThemeProvider>
       </body>
