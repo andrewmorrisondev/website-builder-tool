@@ -31,9 +31,9 @@ export { default as Footer } from "./Layout/Footer";
 export { default as Container } from "./Layout/Container";
 
 // // Media
-// export { default as ImageGallery } from "./Media/ImageGallery";
-// export { default as VideoEmbed } from "./Media/VideoEmbed";
-// export { default as Lightbox } from "./Media/Lightbox";
+export { default as ImageGallery } from "./Media/ImageGallery";
+export { default as VideoEmbed } from "./Media/VideoEmbed";
+export { default as Lightbox } from "./Media/Lightbox";
 
 // // Modals
 // export { default as Modal } from "./Modals/Modal";
