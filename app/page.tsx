@@ -13,9 +13,14 @@ import {
   ImageGallery,
   Lightbox,
   VideoEmbed,
+  Modal,
+  LightboxModal,
+  CTAButton,
 } from "./site-builder-components/registry";
 
 const Home: React.FC = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [isLightboxOpen1, setLightboxOpen1] = useState(false);
   const [formFieldValue, setFormFieldValue] = useState<string>("");
   const [contactFormData, setContactFormData] = useState<{
     name: string;
@@ -210,6 +215,23 @@ const Home: React.FC = () => {
         title={"demo video"}
         src={"https://www.youtube.com/embed/pCTTOnSpupo"}
       />
+      <div>
+        <button onClick={() => setModalOpen(true)}>Open Modal</button>
+        <Modal
+          open={isModalOpen}
+          onClose={() => setModalOpen(false)}
+          title="My Modal"
+        >
+          <p>This is a modal content.</p>
+        </Modal>
+
+        <button onClick={() => setLightboxOpen(true)}>Open Lightbox</button>
+        <LightboxModal
+          images={images}
+          open={isLightboxOpen1}
+          onClose={() => setLightboxOpen(!!lightboxOpen)}
+        />
+      </div>
     </>
   );
 };
