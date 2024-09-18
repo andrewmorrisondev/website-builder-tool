@@ -59,6 +59,11 @@ interface CustomIconButtonProps extends Omit<MUIIconButtonProps, "color"> {
    * Callback function to handle the button click event.
    */
   onClick?: () => void;
+
+  /**
+   * Optional styles to apply to the button.
+   */
+  sx?: SxProps<Theme>;
 }
 
 /**
@@ -76,6 +81,7 @@ const IconButton: React.FC<CustomIconButtonProps> = ({
   variant = "contained",
   shape = "round",
   onClick,
+  sx = {}, // Ensure sx prop is provided by default
   ...props
 }) => {
   const theme = useTheme();
@@ -104,7 +110,7 @@ const IconButton: React.FC<CustomIconButtonProps> = ({
   };
 
   // Define the button styles dynamically based on the props
-  const buttonStyles: SxProps<Theme> = {
+  const defaultButtonStyles: SxProps<Theme> = {
     borderRadius: shape === "round" ? "50%" : theme.spacing(1),
     color:
       variant === "contained"
@@ -124,9 +130,12 @@ const IconButton: React.FC<CustomIconButtonProps> = ({
     },
   };
 
+  // Merge default styles with the sx prop passed by the user
+  const mergedStyles: SxProps<Theme> = { ...defaultButtonStyles, ...sx };
+
   // Render the icon button with optional tooltip
   const iconButtonElement = (
-    <MUIIconButton size={size} onClick={onClick} sx={buttonStyles} {...props}>
+    <MUIIconButton size={size} onClick={onClick} sx={mergedStyles} {...props}>
       {icon}
     </MUIIconButton>
   );
