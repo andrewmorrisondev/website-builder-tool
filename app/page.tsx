@@ -8,6 +8,8 @@ import {
   ResponsiveGrid,
   Section,
   InfoCard,
+  HeroBanner,
+  Carousel,
 } from "./site-builder-components/registry";
 
 const Home: React.FC = () => {
@@ -34,9 +36,48 @@ const Home: React.FC = () => {
   const handleFormFieldChange = (value: string): void => {
     setFormFieldValue(value);
   };
+  // Carousel items can be anything, here we'll use InfoCard as an example
+  const carouselItems = [
+    <InfoCard
+      title="Service 1"
+      description="We provide top-notch web development services."
+      key={1}
+    />,
+    <InfoCard
+      title="Service 2"
+      description="Our design services will help your brand stand out."
+      key={2}
+    />,
+    <InfoCard
+      title="Service 3"
+      description="Get comprehensive digital marketing solutions."
+      key={3}
+    />,
+  ];
+
+  const handleCtaClick: () => void = () => {
+    console.log("CTA button clicked");
+  };
 
   return (
     <>
+      <HeroBanner
+        title="Welcome to Our Company"
+        subtitle="We create beautiful digital experiences"
+        backgroundImage="/web-avatar@2x.png" // Example background image
+        ctaText="Learn More"
+        onCtaClick={handleCtaClick}
+        align="center" // Can be "left", "center", or "right"
+        fullHeight={true}
+      />
+
+      {/* Carousel Usage */}
+      <Box padding={4}>
+        <Typography variant="h4" gutterBottom>
+          Our Services
+        </Typography>
+        <Carousel items={carouselItems} interval={5000} />
+      </Box>
       <Box padding={4}>
         <Typography variant="h4" gutterBottom>
           Example Usage of Dynamic Forms

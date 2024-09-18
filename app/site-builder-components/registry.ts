@@ -22,8 +22,8 @@ export { default as ResponsiveGrid } from "./Grid/ResponsiveGrid";
 export { default as Section } from "./Grid/Section";
 
 // // Hero
-// export { default as HeroBanner } from "./Hero/HeroBanner";
-// export { default as Carousel } from "./Hero/Carousel";
+export { default as HeroBanner } from "./Hero/HeroBanner";
+export { default as Carousel } from "./Hero/Carousel";
 
 // // Layout
 // export { default as Header } from "./Layout/Header";
