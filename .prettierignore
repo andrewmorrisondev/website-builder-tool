@@ -1,0 +1,5 @@
+*.config.js
+*.config.ts
+*.config.mjs
+plop-templates/
+node-modules/

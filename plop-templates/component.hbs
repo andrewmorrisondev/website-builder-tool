@@ -1,0 +1,19 @@
+import React from "react";
+import { Card } from "@mui/material";
+
+interface {{pascalCase name}}Props {
+  title?: string;
+  onClick?: () => void;
+}
+
+const {{pascalCase name}} = ({ title = "{{pascalCase name}}", onClick }: {{pascalCase name}}Props): JSX.Element => {
+  return (
+    <Card data-testid="{{kebab-case name}}-test">
+      <h1>{title}</h1>
+      <button onClick={onClick}>Click me</button>
+      <p>We are working hard to bring you a great experience.</p>
+    </Card>
+  );
+};
+
+export default {{pascalCase name}};

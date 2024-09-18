@@ -1,0 +1,17 @@
+{
+  "urls": [
+    "https://www.andrewmorrison.dev",
+    "https://andrewmorrison.dev",
+    "https://staging.andrewmorrison.dev"
+  ],
+  "config": {
+    "chrome": {
+      "args": [
+        "--no-sandbox",
+        "--disable-dev-shm-usage"
+      ]
+    }
+  },
+  "threshold": 0,
+  "reporter": "json"
+}

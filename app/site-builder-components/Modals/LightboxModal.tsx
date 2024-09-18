@@ -1,0 +1,1 @@
+// LightboxModal.tsx component

@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "module": "commonjs", // Jest works well with CommonJS
+    "moduleResolution": "node", // Use Node resolution for Jest
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve", // or "react" depending on React version
+    "incremental": true,
+    "paths": {
+      "@/*": ["./*"],
+      "pdfjs-dist": ["./node_modules/pdfjs-dist"],
+      "pdfjs-dist/legacy/build/pdf": [
+        "./node_modules/pdfjs-dist/legacy/build/pdf"
+      ]
+    },
+    "noEmit": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": ["**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
