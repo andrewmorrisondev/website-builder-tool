@@ -40,7 +40,7 @@ export { default as Modal } from "./Modals/Modal";
 export { default as LightboxModal } from "./Modals/LightboxModal";
 
 // // PricingTable
-// export { default as PricingTable } from "./PricingTable/PricingTable";
+export { default as PricingTable } from "./PricingTable/PricingTable";
 
 // // SEO
 // export { default as MetaTags } from "./SEO/MetaTags";

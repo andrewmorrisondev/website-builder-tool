@@ -14,13 +14,11 @@ import {
   Lightbox,
   VideoEmbed,
   Modal,
-  LightboxModal,
-  CTAButton,
+  PricingTable,
 } from "./site-builder-components/registry";
 
 const Home: React.FC = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-  const [isLightboxOpen1, setLightboxOpen1] = useState(false);
   const [formFieldValue, setFormFieldValue] = useState<string>("");
   const [contactFormData, setContactFormData] = useState<{
     name: string;
@@ -46,6 +44,29 @@ const Home: React.FC = () => {
   const handleFormFieldChange = (value: string): void => {
     setFormFieldValue(value);
   };
+  const pricingOptions = [
+    {
+      title: "Basic",
+      price: "$9.99/month",
+      features: ["1 Project", "Basic Support", "500MB Storage"],
+      buttonText: "Get Started",
+      onButtonClick: () => alert("Basic plan selected"),
+    },
+    {
+      title: "Pro",
+      price: "$19.99/month",
+      features: ["5 Projects", "Priority Support", "5GB Storage"],
+      buttonText: "Choose Pro",
+      onButtonClick: () => alert("Pro plan selected"),
+    },
+    {
+      title: "Enterprise",
+      price: "$49.99/month",
+      features: ["Unlimited Projects", "24/7 Support", "Unlimited Storage"],
+      buttonText: "Contact Us",
+      onButtonClick: () => alert("Enterprise plan selected"),
+    },
+  ];
 
   /**
    * Handles the click on the image from the gallery, opens the lightbox
@@ -226,12 +247,8 @@ const Home: React.FC = () => {
         </Modal>
 
         <button onClick={() => setLightboxOpen(true)}>Open Lightbox</button>
-        <LightboxModal
-          images={images}
-          open={isLightboxOpen1}
-          onClose={() => setLightboxOpen(!!lightboxOpen)}
-        />
       </div>
+      <PricingTable options={pricingOptions} />
     </>
   );
 };
