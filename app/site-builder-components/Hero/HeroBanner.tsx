@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Typography, Button, useTheme } from "@mui/material";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { keyframes } from "@emotion/react"; // To handle keyframes animation
 
 /**
  * Props for the HeroBanner component.
@@ -21,6 +23,19 @@ interface HeroBannerProps {
   align?: "left" | "center" | "right";
   fullHeight?: boolean; // New prop to control full viewport height
 }
+
+// Keyframes for the scroll animation
+const bounceAnimation = keyframes`
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+`;
 
 /**
  * HeroBanner component - displays a full-width banner with a background image,
@@ -49,9 +64,27 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
   ctaText,
   onCtaClick,
   align = "center",
-  fullHeight = false, // Default to false, meaning it won't take up full viewport height
+  fullHeight = false,
 }) => {
   const theme = useTheme();
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  // Detect user scroll and hide the scroll encourager
+  useEffect(() => {
+    const handleScroll = (): void => {
+      if (window.scrollY > 0) {
+        setHasScrolled(true);
+      } else {
+        setHasScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <Box
@@ -71,7 +104,8 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
             : align === "right"
               ? "flex-end"
               : "flex-start",
-        height: fullHeight ? "100dvh" : "25em", // If fullHeight is true, use 100dvh
+        height: fullHeight ? "100dvh" : "25em",
+        position: "relative", // Important for positioning the scroll encourager
       }}
     >
       {/* Main title */}
@@ -96,6 +130,44 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
         >
           {ctaText}
         </Button>
+      )}
+
+      {/* Animated scroll encourager */}
+      {fullHeight && (
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: theme.spacing(4),
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            animation: `${bounceAnimation} 2s infinite`,
+            cursor: "pointer",
+            color: theme.palette.common.white,
+            opacity: hasScrolled ? 0 : 1, // Fade out when user scrolls
+            transition: "opacity 0.5s ease-in-out", // Smooth fade effect
+          }}
+        >
+          {/* Desktop Scroll Encourager */}
+          <Box
+            sx={{
+              display: { xs: "none", md: "block" }, // Show only on desktop
+            }}
+          >
+            <Typography variant="body1">Scroll Down</Typography>
+            <KeyboardArrowDownIcon sx={{ fontSize: "2rem" }} />
+          </Box>
+
+          {/* Mobile Scroll Encourager */}
+          <Box
+            sx={{
+              display: { xs: "block", md: "none" }, // Show only on mobile
+            }}
+          >
+            <KeyboardArrowDownIcon sx={{ fontSize: "3rem" }} />
+          </Box>
+        </Box>
       )}
     </Box>
   );
