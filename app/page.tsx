@@ -15,6 +15,7 @@ import {
   VideoEmbed,
   Modal,
   PricingTable,
+  MetaTags,
 } from "./site-builder-components/registry";
 
 const Home: React.FC = () => {
@@ -115,6 +116,7 @@ const Home: React.FC = () => {
 
   return (
     <>
+      <MetaTags />
       <HeroBanner
         title="Welcome to Our Company"
         subtitle="We create beautiful digital experiences"

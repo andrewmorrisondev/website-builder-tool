@@ -1,4 +1,5 @@
 // components/Sidebar/Sidebar.tsx
+"use client";
 import React, { useState, ReactNode } from "react";
 import { Drawer, Box } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close"; // Icon for close button

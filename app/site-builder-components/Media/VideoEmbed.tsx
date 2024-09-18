@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { Box, Paper } from "@mui/material";
 

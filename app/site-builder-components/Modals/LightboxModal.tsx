@@ -1,4 +1,5 @@
 // LightboxModal.tsx component
+"use client";
 import React, { useState } from "react";
 import { Dialog, IconButton, Box } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";

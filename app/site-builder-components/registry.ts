@@ -43,7 +43,7 @@ export { default as LightboxModal } from "./Modals/LightboxModal";
 export { default as PricingTable } from "./PricingTable/PricingTable";
 
 // // SEO
-// export { default as MetaTags } from "./SEO/MetaTags";
+export { default as MetaTags } from "./SEO/MetaTags";
 
 // // Social
 // export { default as SocialShareButtons } from "./Social/SocialShareButtons";
