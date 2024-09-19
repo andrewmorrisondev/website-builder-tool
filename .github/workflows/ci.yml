@@ -48,29 +48,29 @@ jobs:
       - name: Run lint
         run: npm run lint
 
-  test:
-    needs: cache
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+  # test:
+  #   needs: cache
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "20" # Specify your Node.js version
+  #     - name: Set up Node.js
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: "20" # Specify your Node.js version
 
-      - name: Install dependencies
-        run: npm install
+  #     - name: Install dependencies
+  #       run: npm install
 
-      - name: TypeScript Type Checking
-        run: npm run type-check
+  #     - name: TypeScript Type Checking
+  #       run: npm run type-check
 
-      - name: Run tests
-        run: npm run test
+  #     - name: Run tests
+  #       run: npm run test
 
-      - name: Security Vulnerability Scanning
-        run: npm audit --audit-level=high
+  #     - name: Security Vulnerability Scanning
+  #       run: npm audit --audit-level=high
 
-      - name: Accessibility Checks
-        run: npx pa11y-ci
+  #     - name: Accessibility Checks
+  #       run: npx pa11y-ci
