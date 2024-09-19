@@ -51,9 +51,9 @@ export { default as SocialShareButtons } from "./Social/SocialShareButtons";
 export { default as SocialFollowButtons } from "./Social/SocialFollowButtons";
 
 // // Typography
-// export { default as Heading } from "./Typography/Heading";
-// export { default as Subheading } from "./Typography/Subheading";
-// export { default as Paragraph } from "./Typography/Paragraph";
+export { default as Heading } from "./Typography/Heading";
+export { default as Subheading } from "./Typography/Subheading";
+export { default as Paragraph } from "./Typography/Paragraph";
 
 // // Map
 // export { default as GoogleMap } from "./Map/GoogleMap";
