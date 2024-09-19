@@ -9,6 +9,7 @@ interface FormFieldProps {
   required?: boolean;
   multiline?: boolean;
   rows?: number;
+  width?: string; // Add width prop to allow customization, default is "100%"
 }
 
 /**
@@ -21,6 +22,7 @@ interface FormFieldProps {
  * @param required - Whether the field is required (default: false).
  * @param multiline - Whether the field is multiline (default: false).
  * @param rows - Number of rows for multiline field (default: 1).
+ * @param width - Width of the field (default: '100%').
  */
 const FormField: React.FC<FormFieldProps> = ({
   label,
@@ -30,6 +32,7 @@ const FormField: React.FC<FormFieldProps> = ({
   required = false,
   multiline = false,
   rows = 1,
+  width = "100%", // Default value for width
 }) => {
   return (
     <TextField
@@ -37,11 +40,12 @@ const FormField: React.FC<FormFieldProps> = ({
       value={value}
       onChange={(e) => onChange(e.target.value)}
       type={type}
-      fullWidth
+      fullWidth={false} // Disable fullWidth since we're customizing the width
       margin="normal"
       required={required}
       multiline={multiline}
       rows={rows}
+      sx={{ width }} // Apply the customizable width prop
     />
   );
 };

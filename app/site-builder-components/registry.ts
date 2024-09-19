@@ -29,6 +29,7 @@ export { default as Carousel } from "./Hero/Carousel";
 export { default as Header } from "./Layout/Header";
 export { default as Footer } from "./Layout/Footer";
 export { default as Container } from "./Layout/Container";
+export { default as Body } from "./Layout/Body";
 
 // // Media
 export { default as ImageGallery } from "./Media/ImageGallery";

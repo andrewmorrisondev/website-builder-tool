@@ -107,6 +107,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
               : "flex-start",
         height: fullHeight ? "100dvh" : "25em",
         position: "relative", // Important for positioning the scroll encourager
+        width: "100%",
       }}
     >
       {/* Main title */}

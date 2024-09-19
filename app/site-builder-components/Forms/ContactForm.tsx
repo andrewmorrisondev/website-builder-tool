@@ -1,10 +1,10 @@
-// ContactForm.tsx component
 import React from "react";
 import { Box, TextField, Button, Typography } from "@mui/material";
 
 interface ContactFormProps {
   onSubmit: (values: ContactFormValues) => void;
   initialValues?: ContactFormValues;
+  width?: string; // Add width prop to allow customization, default is 100%
 }
 
 interface ContactFormValues {
@@ -18,10 +18,12 @@ interface ContactFormValues {
  *
  * @param onSubmit - Function to handle form submission.
  * @param initialValues - Initial form values (optional).
+ * @param width - Width of the form (optional), default is "100%".
  */
 const ContactForm: React.FC<ContactFormProps> = ({
   onSubmit,
   initialValues,
+  width = "100%", // Default value for the width prop
 }) => {
   const [values, setValues] = React.useState<ContactFormValues>(
     initialValues || { name: "", email: "", message: "" },
@@ -40,7 +42,11 @@ const ContactForm: React.FC<ContactFormProps> = ({
   };
 
   return (
-    <Box component="form" onSubmit={handleSubmit}>
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ width }} // Apply the width prop to the Box component
+    >
       <Typography variant="h6">Contact Us</Typography>
       <TextField
         label="Name"
