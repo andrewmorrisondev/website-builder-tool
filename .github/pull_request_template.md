@@ -1,4 +1,3 @@
-
 ## Code Change Summary
 
 ### Objective
@@ -6,6 +5,8 @@
 <!-- Describe the purpose of the PR -->
 
 ### Commit Messages
+
+- update pr template to dynamically generate
 - add timeline
 - add tabs
 - add accordian
@@ -36,9 +37,8 @@
 
 ### Files Changed
 
-
 ### Changelog
 
-
 ### Additional Information
+
 <!-- Add any extra information, screenshots, or demos -->
