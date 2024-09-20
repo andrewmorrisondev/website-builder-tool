@@ -67,7 +67,7 @@ export { default as ClickAnimation } from "./Animations/ClickAnimation";
 export { default as Accordion } from "./Accordion/Accordion";
 
 // // Tabs
-// export { default as Tabs } from "./Tabs/Tabs";
+export { default as Tabs } from "./Tabs/Tabs";
 
 // // Timeline
 // export { default as Timeline } from "./Timeline/Timeline";

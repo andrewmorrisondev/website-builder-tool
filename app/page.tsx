@@ -19,6 +19,7 @@ import {
   ScrollAnimation,
   HoverEffect,
   ClickAnimation,
+  Tabs,
 } from "./site-builder-components/registry";
 
 const Home: React.FC = () => {
@@ -120,6 +121,10 @@ const Home: React.FC = () => {
   return (
     <>
       <MetaTags />
+      <Tabs labels={["Tab 1", "Tab 2"]}>
+        <div>Content for Tab 1</div>
+        <div>Content for Tab 2</div>
+      </Tabs>
       <HeroBanner
         title="Welcome to Our Company"
         subtitle="We create beautiful digital experiences"
