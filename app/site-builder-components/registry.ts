@@ -70,4 +70,4 @@ export { default as Accordion } from "./Accordion/Accordion";
 export { default as Tabs } from "./Tabs/Tabs";
 
 // // Timeline
-// export { default as Timeline } from "./Timeline/Timeline";
+export { default as Timeline } from "./Timeline/Timeline";

@@ -20,6 +20,7 @@ import {
   HoverEffect,
   ClickAnimation,
   Tabs,
+  Timeline,
 } from "./site-builder-components/registry";
 
 const Home: React.FC = () => {
@@ -125,6 +126,20 @@ const Home: React.FC = () => {
         <div>Content for Tab 1</div>
         <div>Content for Tab 2</div>
       </Tabs>
+      <Timeline
+        items={[
+          {
+            title: "Event 1",
+            date: "2024-01-01",
+            content: <p>Details of Event 1</p>,
+          },
+          {
+            title: "Event 2",
+            date: "2024-02-01",
+            content: <p>Details of Event 2</p>,
+          },
+        ]}
+      />
       <HeroBanner
         title="Welcome to Our Company"
         subtitle="We create beautiful digital experiences"
