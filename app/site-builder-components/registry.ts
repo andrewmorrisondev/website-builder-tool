@@ -64,7 +64,7 @@ export { default as HoverEffect } from "./Animations/HoverEffect";
 export { default as ClickAnimation } from "./Animations/ClickAnimation";
 
 // // Accordion
-// export { default as Accordion } from "./Accordion/Accordion";
+export { default as Accordion } from "./Accordion/Accordion";
 
 // // Tabs
 // export { default as Tabs } from "./Tabs/Tabs";

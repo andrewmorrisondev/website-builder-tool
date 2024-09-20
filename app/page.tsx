@@ -129,7 +129,6 @@ const Home: React.FC = () => {
         align="center" // Can be "left", "center", or "right"
         fullHeight={true}
       />
-
       {/* Carousel Usage */}
       <Box padding={4}>
         <Typography variant="h4" gutterBottom>
