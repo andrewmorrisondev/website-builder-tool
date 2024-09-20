@@ -6,6 +6,7 @@
 
 ### Commit Messages
 
+- update home page for pre-commit testing
 - update pr template to dynamically generate
 - add timeline
 - add tabs

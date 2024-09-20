@@ -9,7 +9,7 @@ const git = simpleGit();
 const templatePath = path.join(
   process.cwd(),
   ".github",
-  "pull_request_template.md",
+  "PULL_REQUEST_TEMPLATE.md",
 );
 
 async function generatePRTemplate() {
