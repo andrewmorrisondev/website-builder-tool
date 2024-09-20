@@ -16,6 +16,9 @@ import {
   Modal,
   PricingTable,
   MetaTags,
+  ScrollAnimation,
+  HoverEffect,
+  ClickAnimation,
 } from "./site-builder-components/registry";
 
 const Home: React.FC = () => {
@@ -212,11 +215,17 @@ const Home: React.FC = () => {
         {/* Another section with just content */}
         <Section padding={4}>
           <Typography variant="h5">About Us</Typography>
-          <Typography variant="body1">
-            We are a company dedicated to providing high-quality services to
-            meet your needs. Our experienced team is here to assist you in every
-            step of the way.
-          </Typography>
+          <ScrollAnimation>
+            <HoverEffect>
+              <ClickAnimation>
+                <Typography variant="body1">
+                  We are a company dedicated to providing high-quality services
+                  to meet your needs. Our experienced team is here to assist you
+                  in every step of the way.
+                </Typography>
+              </ClickAnimation>
+            </HoverEffect>
+          </ScrollAnimation>
         </Section>
       </Box>
       {/* Image Gallery */}

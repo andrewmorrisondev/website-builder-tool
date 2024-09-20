@@ -59,8 +59,9 @@ export { default as Paragraph } from "./Typography/Paragraph";
 // export { default as GoogleMap } from "./Map/GoogleMap";
 
 // // Animations
-// export { default as ScrollAnimation } from "./Animations/ScrollAnimation";
-// export { default as HoverEffect } from "./Animations/HoverEffect";
+export { default as ScrollAnimation } from "./Animations/ScrollAnimation";
+export { default as HoverEffect } from "./Animations/HoverEffect";
+export { default as ClickAnimation } from "./Animations/ClickAnimation";
 
 // // Accordion
 // export { default as Accordion } from "./Accordion/Accordion";
