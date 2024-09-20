@@ -1,11 +1,16 @@
 "use client";
-import { HeroBanner, MetaTags } from "../site-builder-components/registry";
+import {
+  GoogleMap,
+  HeroBanner,
+  MetaTags,
+} from "../site-builder-components/registry";
 
 const About: React.FC = () => {
   return (
     <>
       <MetaTags />
       <HeroBanner title={"Title"} />
+      <GoogleMap />
     </>
   );
 };

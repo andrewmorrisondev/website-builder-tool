@@ -1,17 +1,17 @@
 // Paragraph.tsx component
-import React from 'react';
-import { Typography, useTheme } from '@mui/material';
+import React from "react";
+import { Typography, useTheme } from "@mui/material";
 
 interface ParagraphProps {
   children: React.ReactNode;
   color?: string;
-  align?: 'left' | 'center' | 'right';
+  align?: "left" | "center" | "right";
 }
 
 const Paragraph: React.FC<ParagraphProps> = ({
   children,
   color,
-  align = 'left',
+  align = "left",
 }) => {
   const theme = useTheme();
   return (
