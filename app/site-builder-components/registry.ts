@@ -51,22 +51,23 @@ export { default as SocialShareButtons } from "./Social/SocialShareButtons";
 export { default as SocialFollowButtons } from "./Social/SocialFollowButtons";
 
 // // Typography
-// export { default as Heading } from "./Typography/Heading";
-// export { default as Subheading } from "./Typography/Subheading";
-// export { default as Paragraph } from "./Typography/Paragraph";
+export { default as Heading } from "./Typography/Heading";
+export { default as Subheading } from "./Typography/Subheading";
+export { default as Paragraph } from "./Typography/Paragraph";
 
 // // Map
 // export { default as GoogleMap } from "./Map/GoogleMap";
 
 // // Animations
-// export { default as ScrollAnimation } from "./Animations/ScrollAnimation";
-// export { default as HoverEffect } from "./Animations/HoverEffect";
+export { default as ScrollAnimation } from "./Animations/ScrollAnimation";
+export { default as HoverEffect } from "./Animations/HoverEffect";
+export { default as ClickAnimation } from "./Animations/ClickAnimation";
 
 // // Accordion
-// export { default as Accordion } from "./Accordion/Accordion";
+export { default as Accordion } from "./Accordion/Accordion";
 
 // // Tabs
-// export { default as Tabs } from "./Tabs/Tabs";
+export { default as Tabs } from "./Tabs/Tabs";
 
 // // Timeline
-// export { default as Timeline } from "./Timeline/Timeline";
+export { default as Timeline } from "./Timeline/Timeline";

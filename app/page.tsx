@@ -16,6 +16,11 @@ import {
   Modal,
   PricingTable,
   MetaTags,
+  ScrollAnimation,
+  HoverEffect,
+  ClickAnimation,
+  Tabs,
+  Timeline,
 } from "./site-builder-components/registry";
 
 const Home: React.FC = () => {
@@ -117,6 +122,24 @@ const Home: React.FC = () => {
   return (
     <>
       <MetaTags />
+      <Tabs labels={["Tab 1", "Tab 2"]}>
+        <div>Content for Tab 1</div>
+        <div>Content for Tab 2</div>
+      </Tabs>
+      <Timeline
+        items={[
+          {
+            title: "Event 1",
+            date: "2024-01-01",
+            content: <p>Details of Event 1</p>,
+          },
+          {
+            title: "Event 2",
+            date: "2024-02-01",
+            content: <p>Details of Event 2</p>,
+          },
+        ]}
+      />
       <HeroBanner
         title="Welcome to Our Company"
         subtitle="We create beautiful digital experiences"
@@ -126,7 +149,6 @@ const Home: React.FC = () => {
         align="center" // Can be "left", "center", or "right"
         fullHeight={true}
       />
-
       {/* Carousel Usage */}
       <Box padding={4}>
         <Typography variant="h4" gutterBottom>
@@ -212,11 +234,17 @@ const Home: React.FC = () => {
         {/* Another section with just content */}
         <Section padding={4}>
           <Typography variant="h5">About Us</Typography>
-          <Typography variant="body1">
-            We are a company dedicated to providing high-quality services to
-            meet your needs. Our experienced team is here to assist you in every
-            step of the way.
-          </Typography>
+          <ScrollAnimation>
+            <HoverEffect>
+              <ClickAnimation>
+                <Typography variant="body1">
+                  We are a company dedicated to providing high-quality services
+                  to meet your needs. Our experienced team is here to assist you
+                  in every step of the way.
+                </Typography>
+              </ClickAnimation>
+            </HoverEffect>
+          </ScrollAnimation>
         </Section>
       </Box>
       {/* Image Gallery */}
