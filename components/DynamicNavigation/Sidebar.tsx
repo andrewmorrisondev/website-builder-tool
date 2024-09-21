@@ -2,7 +2,7 @@
 import React, { useState, useEffect, ReactNode } from "react";
 import { Drawer, Box } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close"; // Icon for close button
-import { IconButton } from "../registry"; // Assuming IconButton is a custom component
+import { CTAButton } from "@components/registry";
 
 // Interface for the Sidebar component props
 interface SidebarProps {
@@ -63,10 +63,10 @@ const Sidebar = ({
           }}
         >
           <h3>Nothing to See here 👀</h3>
-          <IconButton
+          <CTAButton
             icon={<CloseIcon />}
-            onClick={toggleDrawer(false)}
-          ></IconButton>
+            onClick={() => toggleDrawer(true)}
+          ></CTAButton>
         </Box>
         {children}
       </Box>

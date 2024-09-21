@@ -7,6 +7,7 @@
 ### Commit Messages
 
 - update eslint config
+- update eslint config
 - remove test project
 - convert to monorepo
 - Merge branch 'main' of https://github.com/andrewmorrisondev/website-builder-tool into draft

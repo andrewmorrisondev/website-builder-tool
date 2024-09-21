@@ -1,6 +1,5 @@
 // Buttons
 export { default as CTAButton } from "@components/Buttons/CTAButton";
-export { default as IconButton } from "@components/Buttons/IconButton";
 
 // Cards
 export { default as InfoCard } from "@components/Cards/InfoCard";
@@ -34,7 +33,6 @@ export { default as Body } from "@components/Layout/Body";
 // Media
 export { default as ImageGallery } from "@components/Media/ImageGallery";
 export { default as VideoEmbed } from "@components/Media/VideoEmbed";
-export { default as Lightbox } from "@components/Media/Lightbox";
 
 // Modals
 export { default as Modal } from "@components/Modals/Modal";

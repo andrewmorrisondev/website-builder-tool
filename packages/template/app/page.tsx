@@ -10,8 +10,6 @@ import {
   InfoCard,
   HeroBanner,
   Carousel,
-  ImageGallery,
-  Lightbox,
   VideoEmbed,
   Modal,
   PricingTable,
@@ -33,8 +31,6 @@ const Home: React.FC = () => {
     email: "",
     message: "",
   });
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const handleContactFormSubmit = (values: typeof contactFormData): void => {
     setContactFormData(values);
@@ -76,17 +72,10 @@ const Home: React.FC = () => {
    * Handles the click on the image from the gallery, opens the lightbox
    * and sets the index of the clicked image.
    */
-  const handleImageClick = (index: number): void => {
-    setSelectedImageIndex(index);
-    setLightboxOpen(true);
-  };
 
   /**
    * Handles the closing of the lightbox.
    */
-  const handleCloseLightbox = (): void => {
-    setLightboxOpen(false);
-  };
 
   // Carousel items can be anything, here we'll use InfoCard as an example
   const carouselItems = [
@@ -105,12 +94,6 @@ const Home: React.FC = () => {
       description="Get comprehensive digital marketing solutions."
       key={3}
     />,
-  ];
-
-  const images = [
-    { src: "/web-avatar@2x.png", alt: "Image of Andy" },
-    { src: "/web-avatar@2x.png", alt: "Another Image" },
-    { src: "/web-avatar@2x.png", alt: "Third Image" },
   ];
 
   const handleCtaClick: () => void = () => {
@@ -227,21 +210,6 @@ const Home: React.FC = () => {
           </ScrollAnimation>
         </Section>
       </Box>
-      {/* Image Gallery */}
-      <ImageGallery
-        images={images}
-        spacing={2}
-        columns={{ xs: 12, sm: 6, md: 4, lg: 3, xl: 2 }}
-        onClickImage={handleImageClick}
-      />
-
-      {/* Lightbox Modal */}
-      <Lightbox
-        images={images}
-        open={lightboxOpen}
-        onClose={handleCloseLightbox}
-        initialIndex={selectedImageIndex}
-      />
       <VideoEmbed
         title={"demo video"}
         src={"https://www.youtube.com/embed/pCTTOnSpupo"}
@@ -255,8 +223,6 @@ const Home: React.FC = () => {
         >
           <p>This is a modal content.</p>
         </Modal>
-
-        <button onClick={() => setLightboxOpen(true)}>Open Lightbox</button>
       </div>
       <PricingTable options={pricingOptions} />
     </>

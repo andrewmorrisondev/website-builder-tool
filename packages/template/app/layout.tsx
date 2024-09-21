@@ -5,7 +5,7 @@ import { useState } from "react";
 import { CustomThemeProvider } from "./context/ThemeContext";
 import { CssBaseline, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Sidebar, CTAButton, IconButton, Body } from "@components/registry";
+import { Sidebar, CTAButton, Body } from "@components/registry";
 
 export default function RootLayout({
   children,
@@ -40,16 +40,16 @@ export default function RootLayout({
             </Sidebar>
 
             {/* Menu button */}
-            <IconButton
+            <CTAButton
               icon={<MenuIcon />}
-              onClick={toggleDrawer(true)}
+              onClick={() => toggleDrawer(true)}
               sx={{
                 position: "fixed",
                 top: "1rem",
                 left: "1rem",
                 zIndex: 1000,
               }}
-            ></IconButton>
+            ></CTAButton>
 
             {/* Main content */}
             <Box

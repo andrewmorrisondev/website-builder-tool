@@ -41,6 +41,11 @@ interface CTAButtonProps extends Omit<ButtonProps, "color"> {
   label?: string;
 
   /**
+   * Optional icon to display alongside the label.
+   */
+  icon?: React.ReactNode;
+
+  /**
    * If true, the button will take up the full width of its container.
    * @default false
    */
@@ -73,6 +78,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({
   fullWidth = false,
   onClick,
   tooltip,
+  icon,
   ...props
 }) => {
   const theme = useTheme();
@@ -107,6 +113,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({
       size={size}
       fullWidth={fullWidth}
       onClick={onClick}
+      startIcon={icon} // Here is where you add the icon
       sx={{
         borderRadius: theme.spacing(2),
         padding: theme.spacing(2, 4),
