@@ -4,7 +4,7 @@
       "src": "packages/template/package.json",
       "use": "@vercel/node",
       "config": {
-        "buildCommand": "make -f ./Makefile project PKG=packages/template"
+        "buildCommand": "ls -l ./Makefile && make -f ./Makefile project PKG=packages/template"
       }
     }
   ]
