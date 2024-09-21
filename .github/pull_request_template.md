@@ -6,6 +6,7 @@
 
 ### Commit Messages
 
+- fix sonarcloud flags
 - update eslint config
 - update eslint config
 - remove test project
