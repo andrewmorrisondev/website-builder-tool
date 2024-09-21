@@ -2,62 +2,68 @@
 module.exports = {
   root: true,
   parserOptions: {
-    ecmaVersion: "latest", // Set the latest ECMAScript version
-    sourceType: "module", // Allows the use of imports
+    ecmaVersion: "latest",
+    sourceType: "module",
     ecmaFeatures: {
-      jsx: true, // Enables JSX parsing
+      jsx: true,
     },
   },
   env: {
-    browser: true, // Browser global variables
-    commonjs: true, // CommonJS global variables and require statements
-    es6: true, // Enable ES6 syntax
+    browser: true,
+    commonjs: true,
+    es6: true,
   },
-  ignorePatterns: ["!**/.server", "!**/.client"], // Ignore build-related files
-
-  // Base ESLint configuration
+  ignorePatterns: ["dist/", "build/", "!**/.server", "!**/.client"],
   extends: [
-    "eslint:recommended", // Use recommended ESLint rules
-    "plugin:@typescript-eslint/recommended", // TypeScript ESLint rules
-    "plugin:prettier/recommended", // Prettier integration for formatting
-    "next",
-    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "next", // Keep the basic Next.js config without 'core-web-vitals'
+    "plugin:import/recommended",
+    "plugin:import/typescript",
   ],
+  settings: {
+    "import/resolver": {
+      typescript: {
+        project: "./tsconfig.json",
+        alwaysTryTypes: true,
+      },
+      node: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+      },
+    },
+  },
   overrides: [
-    // React-related configurations
     {
       files: ["**/*.{js,jsx,ts,tsx}"],
-      plugins: ["react", "jsx-a11y", "prettier"], // Additional plugins
+      plugins: ["react", "jsx-a11y", "prettier"],
       extends: [
-        "plugin:react/recommended", // Recommended React rules
-        "plugin:react/jsx-runtime", // Automatically imports `React` in JSX
-        "plugin:react-hooks/recommended", // Rules for React hooks
-        "plugin:jsx-a11y/recommended", // Accessibility rules for JSX
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended",
       ],
       settings: {
         react: {
-          version: "detect", // Auto-detect the React version
+          version: "detect",
         },
-        formComponents: ["Form"], // Define components that act as forms
+        formComponents: ["Form"],
         linkComponents: [
-          { name: "Link", linkAttribute: "to" }, // Support for custom link components
+          { name: "Link", linkAttribute: "to" },
           { name: "NavLink", linkAttribute: "to" },
         ],
-        "import/resolver": {
-          typescript: {}, // Enable import resolver for TypeScript
-        },
       },
       rules: {
-        "prettier/prettier": "error", // Enforce Prettier rules as errors
-        "react/prop-types": "off", // Disable prop-types enforcement (using TypeScript)
-        "react/jsx-uses-react": "off", // Disable React in JSX scope rule (Next.js handles this)
-        "react/react-in-jsx-scope": "off", // Not required in Next.js
-        "react-hooks/rules-of-hooks": "error", // Enforce React hook rules
-        "react-hooks/exhaustive-deps": "warn", // Warn for missing dependencies in hooks
+        "prettier/prettier": "error",
+        "react/prop-types": "off",
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
         "jsx-a11y/anchor-is-valid": [
           "error",
           {
-            components: ["Link"], // Enforce valid anchor tags
+            components: ["Link"],
             specialLink: ["to"],
             aspects: ["invalidHref", "preferButton"],
           },
@@ -65,35 +71,27 @@ module.exports = {
         "jsx-a11y/label-has-associated-control": [
           "error",
           {
-            controlComponents: ["Input"], // Enforce label control associations
+            controlComponents: ["Input"],
             assert: "either",
             depth: 3,
           },
         ],
+        // Disable this rule since you're using the App Router
+        "next/no-html-link-for-pages": "off",
       },
     },
-
-    // TypeScript-specific configurations
     {
       files: ["**/*.{ts,tsx}"],
-      plugins: ["@typescript-eslint", "import"], // TypeScript ESLint plugin
-      parser: "@typescript-eslint/parser", // Use the TypeScript parser
+      plugins: ["@typescript-eslint", "import"],
+      parser: "@typescript-eslint/parser",
       settings: {
-        "import/internal-regex": "^~/", // Internal imports configuration
-        "import/resolver": {
-          node: {
-            extensions: [".ts", ".tsx"], // Enable .ts and .tsx imports
-          },
-          typescript: {
-            alwaysTryTypes: true, // Always try to resolve types
-          },
-        },
+        "import/internal-regex": "^@/",
       },
       extends: [
-        "plugin:@typescript-eslint/recommended", // TypeScript recommended rules
-        "plugin:import/recommended", // Import plugin for better import resolution
-        "plugin:import/typescript", // TypeScript support for import plugin
-        "plugin:prettier/recommended", // Integrate Prettier rules
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript",
+        "plugin:prettier/recommended",
       ],
       rules: {
         "@typescript-eslint/no-unused-vars": [
@@ -101,7 +99,7 @@ module.exports = {
           {
             argsIgnorePattern: "^_",
             varsIgnorePattern: "^_",
-            varsIgnorePattern: "^React$", // Ignore unused `React` variables
+            varsIgnorePattern: "^React$",
           },
         ],
         "@typescript-eslint/explicit-function-return-type": [
@@ -111,16 +109,14 @@ module.exports = {
             allowTypedFunctionExpressions: true,
           },
         ],
-        "@typescript-eslint/no-non-null-assertion": "warn", // Warn about non-null assertions
-        "prettier/prettier": "error", // Enforce Prettier rules as errors
+        "@typescript-eslint/no-non-null-assertion": "warn",
+        "prettier/prettier": "error",
       },
     },
-
-    // Node.js environment for ESLint config files
     {
-      files: [".eslintrc.cjs"],
+      files: [".eslintrc.cjs", "packages/backend/**/*.ts"],
       env: {
-        node: true, // Node.js global variables
+        node: true,
       },
     },
   ],
