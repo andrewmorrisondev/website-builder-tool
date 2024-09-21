@@ -13,6 +13,11 @@ GREEN = \033[0;32m
 RED = \033[0;31m
 RESET = \033[0m
 
+project:
+	@echo "Current working directory: $(PWD)"
+	@echo "Running build for package: $(PKG)"
+	# rest of the steps
+
 # Helper function to check the result of a command and only show the output if it fails
 define CHECK
 	echo -n "$1... "; \
