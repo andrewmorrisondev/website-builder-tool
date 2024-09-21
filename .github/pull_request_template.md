@@ -6,6 +6,7 @@
 
 ### Commit Messages
 
+- update vercel build command
 - update workplace paths
 - uhhh
 - update PR

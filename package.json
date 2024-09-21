@@ -11,14 +11,14 @@
     "dev": "npm run _dev --",
     "build": "npm run _build --",
     "start": "npm run _start --",
-    "lint": "npm run _lint --workspaces",
-    "test": "npm run _test --workspaces",
+    "lint": "npm run _lint --",
+    "test": "npm run _test --",
     "type-check": "tsc --noEmit -b packages/*",
-    "_dev": "WORKSPACE=${WORKSPACE:-app} npm run dev --workspace=${WORKSPACE:-app}",
-    "_build": "WORKSPACE=${WORKSPACE:-app} npm run build --workspace=${WORKSPACE:-app}",
-    "_start": "WORKSPACE=${WORKSPACE:-app} npm run start --workspace=${WORKSPACE:-app}",
-    "_lint": "WORKSPACE=${WORKSPACE:-app} npm run lint --workspace=${WORKSPACE:-app}",
-    "_test": "WORKSPACE=${WORKSPACE:-app} npm run test --workspace=${WORKSPACE:-app}"
+    "_dev": "npm run dev --workspace=${WORKSPACE:-template}",
+    "_build": "npm run build --workspace=${WORKSPACE:-template}",
+    "_start": "npm run start --workspace=${WORKSPACE:-template}",
+    "_lint": "npm run lint --workspace=${WORKSPACE:-template}",
+    "_test": "npm run test --workspace=${WORKSPACE:-template}"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
