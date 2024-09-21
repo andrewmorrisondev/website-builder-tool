@@ -6,9 +6,13 @@
 
 ### Commit Messages
 
+- update PR
 - update package.json
+- Merge branch 'main' into draft
 - stop tracking .next build artifacts
 - update package tsconfig
+- Delete packages/template/.next directory (#10)
+- Draft (#8)
 - Delete packages/template/.next/build-manifest.json
 - Delete packages/template/.next/app-build-manifest.json
 - Delete packages/template/.next/BUILD_ID

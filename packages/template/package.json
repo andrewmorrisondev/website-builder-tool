@@ -4,7 +4,6 @@
   "license": "MIT",
   "private": true,
   "type": "module",
-  "exports": "./page.ts",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
