@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "type": "module",
   "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "test": "jest",
-    "type-check": "tsc --noEmit",
+    "dev": "yarn workspace app dev",
+    "build": "yarn workspace app build",
+    "start": "yarn workspace app start",
+    "lint": "yarn workspaces foreach run lint",
+    "test": "yarn workspaces foreach run test",
+    "type-check": "tsc --noEmit -b packages/*",
     "create-component": "npx plop --plopfile plopfile.mjs component"
   },
   "dependencies": {
@@ -19,11 +23,13 @@
     "@mui/material": "^6.1.0",
     "framer-motion": "^11.5.4",
     "next": "^14.2.10",
+    "next-transpile-modules": "^10.0.1",
     "pdfjs-dist": "^4.6.82",
     "react": "^18.3.1",
     "react-dom": "^18",
     "react-pdf": "^9.1.0",
-    "react-youtube": "^10.1.0"
+    "react-youtube": "^10.1.0",
+    "simple-git": "^3.27.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.25.4",
@@ -51,6 +57,6 @@
     "puppeteer": "^23.3.0",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.2"
+    "typescript": "^5.1.6"
   }
 }

@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "composite": true,
+    "paths": {
+      "*": ["./node_modules/*"],
+      "@/*": ["./*"],
+      "@components/*": ["components/*"]
+    },
+    "noEmit": true
+  },
+  "include": [
+    "packages/*/**/*.ts",
+    "packages/*/**/*.tsx",
+    "components/**/*", // Ensure this line includes your shared components
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules", "dist", "**/.next"]
+}

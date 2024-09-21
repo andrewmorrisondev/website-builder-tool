@@ -1,0 +1,10 @@
+{
+  "name": "components",
+  "version": "0.1.0",
+  "types": "registry.ts",
+  "exports": {
+    ".": {
+      "import": "./registry.ts"
+    }
+  }
+}

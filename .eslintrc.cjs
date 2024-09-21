@@ -13,18 +13,32 @@ module.exports = {
     commonjs: true, // CommonJS global variables and require statements
     es6: true, // Enable ES6 syntax
   },
-  ignorePatterns: ["!**/.server", "!**/.client"], // Ignore build-related files
+  ignorePatterns: ["dist/", "build/", "!**/.server", "!**/.client"], // Ignore build-related files
 
-  // Base ESLint configuration
   extends: [
     "eslint:recommended", // Use recommended ESLint rules
     "plugin:@typescript-eslint/recommended", // TypeScript ESLint rules
     "plugin:prettier/recommended", // Prettier integration for formatting
     "next",
     "next/core-web-vitals",
+    "plugin:import/recommended", // Import plugin for handling unresolved paths
+    "plugin:import/typescript", // TypeScript support for import plugin
   ],
+
+  settings: {
+    "import/resolver": {
+      typescript: {
+        project: "./tsconfig.json", // Path to the TypeScript config
+        alwaysTryTypes: true, // Always try to resolve types
+      },
+      node: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"], // Support for TypeScript and JS extensions
+      },
+    },
+  },
+
   overrides: [
-    // React-related configurations
+    // React and JSX configurations
     {
       files: ["**/*.{js,jsx,ts,tsx}"],
       plugins: ["react", "jsx-a11y", "prettier"], // Additional plugins
@@ -43,9 +57,6 @@ module.exports = {
           { name: "Link", linkAttribute: "to" }, // Support for custom link components
           { name: "NavLink", linkAttribute: "to" },
         ],
-        "import/resolver": {
-          typescript: {}, // Enable import resolver for TypeScript
-        },
       },
       rules: {
         "prettier/prettier": "error", // Enforce Prettier rules as errors
@@ -79,15 +90,7 @@ module.exports = {
       plugins: ["@typescript-eslint", "import"], // TypeScript ESLint plugin
       parser: "@typescript-eslint/parser", // Use the TypeScript parser
       settings: {
-        "import/internal-regex": "^~/", // Internal imports configuration
-        "import/resolver": {
-          node: {
-            extensions: [".ts", ".tsx"], // Enable .ts and .tsx imports
-          },
-          typescript: {
-            alwaysTryTypes: true, // Always try to resolve types
-          },
-        },
+        "import/internal-regex": "^@/", // Handle internal imports using '@/'
       },
       extends: [
         "plugin:@typescript-eslint/recommended", // TypeScript recommended rules
@@ -99,15 +102,15 @@ module.exports = {
         "@typescript-eslint/no-unused-vars": [
           "error",
           {
-            argsIgnorePattern: "^_",
-            varsIgnorePattern: "^_",
+            argsIgnorePattern: "^_", // Ignore variables prefixed with '_'
+            varsIgnorePattern: "^_", // Ignore unused variables prefixed with '_'
             varsIgnorePattern: "^React$", // Ignore unused `React` variables
           },
         ],
         "@typescript-eslint/explicit-function-return-type": [
           "error",
           {
-            allowExpressions: true,
+            allowExpressions: true, // Allow omitting return types in expressions
             allowTypedFunctionExpressions: true,
           },
         ],
@@ -116,11 +119,11 @@ module.exports = {
       },
     },
 
-    // Node.js environment for ESLint config files
+    // Node.js-specific configurations
     {
-      files: [".eslintrc.cjs"],
+      files: [".eslintrc.cjs", "packages/backend/**/*.ts"],
       env: {
-        node: true, // Node.js global variables
+        node: true, // Enable Node.js environment
       },
     },
   ],
