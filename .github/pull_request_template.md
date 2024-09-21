@@ -6,6 +6,7 @@
 
 ### Commit Messages
 
+- add vercel.json
 - update package.json
 - update vercel build command
 - update workplace paths
