@@ -137,7 +137,7 @@
         "use strict";
         r.r(t), r.d(t, { default: () => o });
         var a = r(3227),
-          s = r(6572);
+          s = r(1047);
         let o = () =>
           (0, a.jsxs)(a.Fragment, {
             children: [a.jsx(s.NR, {}), a.jsx(s.yo, { title: "Title" })],

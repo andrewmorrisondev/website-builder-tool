@@ -12,30 +12,27 @@
     6767: (e, t, r) => {
       Promise.resolve().then(r.bind(r, 7322));
     },
-    6572: (e, t, r) => {
+    1047: (e, t, r) => {
       "use strict";
       r.d(t, {
-        uT: () => M,
+        uT: () => H,
         m3: () => c,
         lr: () => A,
-        Z3: () => en,
-        t: () => C,
-        Wi: () => P,
-        yo: () => E,
-        ds: () => er,
-        hU: () => m,
-        hJ: () => R,
-        rJ: () => f,
-        ey: () => O,
-        NR: () => Q,
-        u_: () => J,
-        oz: () => k,
-        bv: () => X,
-        Sj: () => W,
-        MS: () => et,
-        $0: () => z,
-        YE: () => w,
-        vj: () => q,
+        Z3: () => ee,
+        t: () => w,
+        Wi: () => C,
+        yo: () => z,
+        ds: () => Q,
+        rJ: () => g,
+        NR: () => X,
+        u_: () => L,
+        oz: () => S,
+        bv: () => U,
+        Sj: () => P,
+        MS: () => K,
+        $0: () => I,
+        YE: () => y,
+        vj: () => Y,
       });
       var n = r(3227),
         o = r(3677),
@@ -51,54 +48,7 @@
         fullWidth: i = !1,
         onClick: c,
         tooltip: d,
-        ...m
-      }) => {
-        let h = (0, s.Z)(),
-          x = () => {
-            if ("inherit" === t) return "inherit";
-            let e = h.palette[t];
-            return "accent1" === t || "accent2" === t
-              ? h.palette[t]
-              : e && e.main
-                ? e.main
-                : h.palette.primary.main;
-          },
-          p = n.jsx(a.Z, {
-            variant: e,
-            size: r,
-            fullWidth: i,
-            onClick: c,
-            sx: {
-              borderRadius: h.spacing(2),
-              padding: h.spacing(2, 4),
-              textTransform: "none",
-              fontSize: h.typography.button.fontSize,
-              fontWeight: h.typography.button.fontWeight,
-              color: "contained" === e ? h.palette.common.white : x(),
-              backgroundColor: "contained" === e ? x() : "transparent",
-              boxShadow: "contained" === e ? h.shadows[1] : "none",
-              "&:hover": {
-                backgroundColor:
-                  "contained" === e
-                    ? h.palette.action.hover
-                    : h.palette.action.selected,
-              },
-            },
-            ...m,
-            children: o,
-          });
-        return d ? n.jsx(l.Z, { title: d, children: p }) : p;
-      };
-      var d = r(746);
-      let m = ({
-        icon: e,
-        color: t = "primary",
-        size: r = "medium",
-        tooltip: o,
-        variant: i = "contained",
-        shape: a = "round",
-        onClick: c,
-        sx: m = {},
+        icon: m,
         ...h
       }) => {
         let x = (0, s.Z)(),
@@ -111,30 +61,39 @@
                 ? e.main
                 : x.palette.primary.main;
           },
-          g = {
-            borderRadius: "round" === a ? "50%" : x.spacing(1),
-            color: "contained" === i ? x.palette.common.white : p(),
-            backgroundColor: "contained" === i ? p() : "transparent",
-            boxShadow: "contained" === i ? x.shadows[2] : "none",
-            border: "outlined" === i ? `1px solid ${p()}` : "none",
-            padding: x.spacing(1),
-            "&:hover": {
-              backgroundColor:
-                "contained" === i
-                  ? x.palette.action.hover
-                  : x.palette.action.selected,
+          g = n.jsx(a.Z, {
+            variant: e,
+            size: r,
+            fullWidth: i,
+            onClick: c,
+            startIcon: m,
+            sx: {
+              borderRadius: x.spacing(2),
+              padding: x.spacing(2, 4),
+              textTransform: "none",
+              fontSize: x.typography.button.fontSize,
+              fontWeight: x.typography.button.fontWeight,
+              color: "contained" === e ? x.palette.common.white : p(),
+              backgroundColor: "contained" === e ? p() : "transparent",
+              boxShadow: "contained" === e ? x.shadows[1] : "none",
+              "&:hover": {
+                backgroundColor:
+                  "contained" === e
+                    ? x.palette.action.hover
+                    : x.palette.action.selected,
+              },
             },
-            ...m,
-          },
-          u = n.jsx(d.Z, { size: r, onClick: c, sx: g, ...h, children: e });
-        return o ? n.jsx(l.Z, { title: o, children: u }) : u;
+            ...h,
+            children: o,
+          });
+        return d ? n.jsx(l.Z, { title: d, children: g }) : g;
       };
-      var h = r(3738),
-        x = r(6949),
-        p = r(5817),
-        g = r(5168),
-        u = r(7364);
-      let f = ({
+      var d = r(3738),
+        m = r(6949),
+        h = r(5817),
+        x = r(5168),
+        p = r(7364);
+      let g = ({
         title: e = "Default Title",
         subtitle: t,
         description: r,
@@ -143,26 +102,26 @@
         image: a,
         imageAlt: l = "Card image",
         imageHeight: c = 200,
-        fullWidth: d = !1,
-        sx: m = [],
+        fullWidth: g = !1,
+        sx: u = [],
         ...f
       }) => {
         let j = (0, s.Z)(),
           b = {
-            maxWidth: d ? "100%" : 345,
+            maxWidth: g ? "100%" : 345,
             boxShadow: "elevation" === i ? j.shadows[1] : "none",
             border:
               "outlined" === i ? `1px solid ${j.palette.divider}` : "none",
             borderRadius: j.spacing(2),
             overflow: "hidden",
-            ...m,
+            ...u,
           };
-        return (0, n.jsxs)(h.Z, {
+        return (0, n.jsxs)(d.Z, {
           sx: b,
           ...f,
           children: [
             a &&
-              n.jsx(x.Z, {
+              n.jsx(m.Z, {
                 component: "img",
                 src: a,
                 alt: l,
@@ -173,52 +132,52 @@
                   display: a ? "block" : "none",
                 },
               }),
-            (0, n.jsxs)(p.Z, {
+            (0, n.jsxs)(h.Z, {
               children: [
                 e &&
-                  n.jsx(g.Z, {
+                  n.jsx(x.Z, {
                     variant: "h5",
                     component: "div",
                     gutterBottom: !0,
                     children: e,
                   }),
                 t &&
-                  n.jsx(g.Z, {
+                  n.jsx(x.Z, {
                     variant: "subtitle1",
                     color: "textSecondary",
                     gutterBottom: !0,
                     children: t,
                   }),
                 r &&
-                  n.jsx(g.Z, {
+                  n.jsx(x.Z, {
                     variant: "body2",
                     color: "textSecondary",
                     children: r,
                   }),
               ],
             }),
-            o && n.jsx(u.Z, { children: o }),
+            o && n.jsx(p.Z, { children: o }),
           ],
         });
       };
-      var j = r(5340),
-        b = r(8968);
-      (0, j.ZP)(b.Z)(({ theme: e }) => ({
+      var u = r(5340),
+        f = r(8968);
+      (0, u.ZP)(f.Z)(({ theme: e }) => ({
         position: "fixed",
         bottom: e.spacing(2),
         right: e.spacing(2),
         backgroundColor: e.palette.primary.main,
         "&:hover": { backgroundColor: e.palette.secondary.main },
       }));
-      var v = r(8768);
-      (0, j.ZP)(v.Z)(({ theme: e }) => ({
+      var j = r(8768);
+      (0, u.ZP)(j.Z)(({ theme: e }) => ({
         position: "fixed",
         bottom: e.spacing(8),
         right: e.spacing(8),
       }));
-      var y = r(6234),
-        Z = r(849);
-      let w = ({
+      var b = r(6234),
+        v = r(849);
+      let y = ({
         isDrawerOpen: e = !1,
         toggleDrawer: t,
         drawerWidth: r = 240,
@@ -233,7 +192,7 @@
           ((e) => () => {
             l(e);
           });
-        return n.jsx(y.ZP, {
+        return n.jsx(b.ZP, {
           anchor: "left",
           open: a,
           onClose: s(!1),
@@ -243,10 +202,10 @@
             flexShrink: 0,
             "& .MuiDrawer-paper": { width: r, boxSizing: "border-box" },
           },
-          children: (0, n.jsxs)(x.Z, {
+          children: (0, n.jsxs)(m.Z, {
             sx: { width: r, padding: "1rem" },
             children: [
-              (0, n.jsxs)(x.Z, {
+              (0, n.jsxs)(m.Z, {
                 sx: {
                   display: "flex",
                   justifyContent: "space-between",
@@ -254,7 +213,7 @@
                 },
                 children: [
                   n.jsx("h3", { children: "Nothing to See here \uD83D\uDC40" }),
-                  n.jsx(m, { icon: n.jsx(Z.Z, {}), onClick: s(!1) }),
+                  n.jsx(c, { icon: n.jsx(v.Z, {}), onClick: () => s(!0) }),
                 ],
               }),
               i,
@@ -262,21 +221,21 @@
           }),
         });
       };
-      var S = r(2925);
-      let C = ({ onSubmit: e, initialValues: t, width: r = "100%" }) => {
+      var Z = r(2925);
+      let w = ({ onSubmit: e, initialValues: t, width: r = "100%" }) => {
           let [o, l] = i().useState(t || { name: "", email: "", message: "" }),
             s = (e) => (t) => {
               l({ ...o, [e]: t.target.value });
             };
-          return (0, n.jsxs)(x.Z, {
+          return (0, n.jsxs)(m.Z, {
             component: "form",
             onSubmit: (t) => {
               t.preventDefault(), e(o), l({ name: "", email: "", message: "" });
             },
             sx: { width: r },
             children: [
-              n.jsx(g.Z, { variant: "h6", children: "Contact Us" }),
-              n.jsx(S.Z, {
+              n.jsx(x.Z, { variant: "h6", children: "Contact Us" }),
+              n.jsx(Z.Z, {
                 label: "Name",
                 placeholder: o.name,
                 onChange: s("name"),
@@ -284,7 +243,7 @@
                 margin: "normal",
                 required: !0,
               }),
-              n.jsx(S.Z, {
+              n.jsx(Z.Z, {
                 label: "Email",
                 placeholder: o.email,
                 onChange: s("email"),
@@ -292,7 +251,7 @@
                 margin: "normal",
                 required: !0,
               }),
-              n.jsx(S.Z, {
+              n.jsx(Z.Z, {
                 label: "Message",
                 placeholder: o.message,
                 onChange: s("message"),
@@ -311,23 +270,23 @@
             ],
           });
         },
-        k = ({ onSubmit: e, initialEmail: t = "", width: r = "100%" }) => {
+        S = ({ onSubmit: e, initialEmail: t = "", width: r = "100%" }) => {
           let [o, l] = i().useState(t),
             [s, c] = i().useState(!1),
             d = (e) =>
               /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(e);
-          return (0, n.jsxs)(x.Z, {
+          return (0, n.jsxs)(m.Z, {
             component: "form",
             onSubmit: (t) => {
               t.preventDefault(), d(o) ? (e(o), l(""), c(!1)) : c(!0);
             },
             sx: { width: r },
             children: [
-              n.jsx(g.Z, {
+              n.jsx(x.Z, {
                 variant: "h6",
                 children: "Sign up for our Newsletter",
               }),
-              n.jsx(S.Z, {
+              n.jsx(Z.Z, {
                 label: "Email",
                 value: o,
                 placeholder: "Enter your email",
@@ -348,7 +307,7 @@
             ],
           });
         },
-        P = ({
+        C = ({
           label: e,
           value: t,
           onChange: r,
@@ -358,7 +317,7 @@
           rows: l = 1,
           width: s = "100%",
         }) =>
-          n.jsx(S.Z, {
+          n.jsx(Z.Z, {
             label: e,
             value: t,
             onChange: (e) => r(e.target.value),
@@ -370,8 +329,8 @@
             rows: l,
             sx: { width: s },
           });
-      var I = r(6840);
-      let W = ({
+      var k = r(6840);
+      let P = ({
           children: e,
           spacing: t = 2,
           columns: r = { xs: 12, sm: 6, md: 4, lg: 3, xl: 2 },
@@ -379,7 +338,7 @@
           justifyContent: i = "center",
         }) => {
           let a = (0, s.Z)();
-          return n.jsx(I.Z, {
+          return n.jsx(k.Z, {
             container: !0,
             spacing: t,
             alignItems: o,
@@ -404,7 +363,7 @@
             children: e,
           });
         },
-        z = ({
+        I = ({
           children: e,
           title: t,
           subtitle: r,
@@ -414,18 +373,18 @@
         }) => {
           let l = (0, s.Z)(),
             c = i || l.palette.background.default;
-          return (0, n.jsxs)(x.Z, {
+          return (0, n.jsxs)(m.Z, {
             sx: { backgroundColor: c, padding: l.spacing(o), textAlign: a },
             children: [
-              t && n.jsx(g.Z, { variant: "h4", children: t }),
-              r && n.jsx(g.Z, { variant: "subtitle1", children: r }),
-              n.jsx(x.Z, { children: e }),
+              t && n.jsx(x.Z, { variant: "h4", children: t }),
+              r && n.jsx(x.Z, { variant: "subtitle1", children: r }),
+              n.jsx(m.Z, { children: e }),
             ],
           });
         };
-      var D = r(6970),
-        T = r(8964);
-      let $ = (0, T.F4)`
+      var W = r(6970),
+        D = r(8964);
+      let T = (0, D.F4)`
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
   }
@@ -436,7 +395,7 @@
     transform: translateY(-5px);
   }
 `,
-        E = ({
+        z = ({
           title: e,
           subtitle: t,
           backgroundImage: r,
@@ -445,12 +404,12 @@
           align: c = "center",
           fullHeight: d = !1,
         }) => {
-          let m = (0, s.Z)(),
-            [h, p] = (0, o.useState)(!1);
+          let h = (0, s.Z)(),
+            [p, g] = (0, o.useState)(!1);
           return (
             (0, o.useEffect)(() => {
               let e = () => {
-                window.scrollY > 0 ? p(!0) : p(!1);
+                window.scrollY > 0 ? g(!0) : g(!1);
               };
               return (
                 window.addEventListener("scroll", e),
@@ -459,14 +418,14 @@
                 }
               );
             }, []),
-            (0, n.jsxs)(x.Z, {
+            (0, n.jsxs)(m.Z, {
               sx: {
                 backgroundImage: `url(${r})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                padding: m.spacing(8, 4),
+                padding: h.spacing(8, 4),
                 textAlign: c,
-                color: m.palette.common.white,
+                color: h.palette.common.white,
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
@@ -481,46 +440,46 @@
                 width: "100%",
               },
               children: [
-                n.jsx(g.Z, { variant: "h2", gutterBottom: !0, children: e }),
+                n.jsx(x.Z, { variant: "h2", gutterBottom: !0, children: e }),
                 t &&
-                  n.jsx(g.Z, { variant: "h6", gutterBottom: !0, children: t }),
+                  n.jsx(x.Z, { variant: "h6", gutterBottom: !0, children: t }),
                 i &&
                   n.jsx(a.Z, {
                     variant: "contained",
                     color: "primary",
                     onClick: l,
-                    sx: { marginTop: m.spacing(2) },
+                    sx: { marginTop: h.spacing(2) },
                     children: i,
                   }),
                 d &&
-                  (0, n.jsxs)(x.Z, {
+                  (0, n.jsxs)(m.Z, {
                     sx: {
                       position: "absolute",
-                      bottom: m.spacing(4),
+                      bottom: h.spacing(4),
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
                       width: "100%",
-                      animation: `${$} 2s infinite`,
+                      animation: `${T} 2s infinite`,
                       cursor: "pointer",
-                      color: m.palette.common.white,
-                      opacity: h ? 0 : 1,
+                      color: h.palette.common.white,
+                      opacity: p ? 0 : 1,
                       transition: "opacity 0.5s ease-in-out",
                     },
                     children: [
-                      (0, n.jsxs)(x.Z, {
+                      (0, n.jsxs)(m.Z, {
                         sx: { display: { xs: "none", md: "block" } },
                         children: [
-                          n.jsx(g.Z, {
+                          n.jsx(x.Z, {
                             variant: "body1",
                             children: "Scroll Down",
                           }),
-                          n.jsx(D.Z, { sx: { fontSize: "2rem" } }),
+                          n.jsx(W.Z, { sx: { fontSize: "2rem" } }),
                         ],
                       }),
-                      n.jsx(x.Z, {
+                      n.jsx(m.Z, {
                         sx: { display: { xs: "block", md: "none" } },
-                        children: n.jsx(D.Z, { sx: { fontSize: "3rem" } }),
+                        children: n.jsx(W.Z, { sx: { fontSize: "3rem" } }),
                       }),
                     ],
                   }),
@@ -528,8 +487,9 @@
             })
           );
         };
-      var B = r(5486),
-        H = r(1120);
+      var $ = r(746),
+        E = r(5486),
+        B = r(1120);
       let A = ({ items: e, interval: t = 5e3 }) => {
         let [r, i] = (0, o.useState)(0),
           a = (0, s.Z)();
@@ -542,7 +502,7 @@
               return () => clearInterval(r);
             }
           }, [t, e.length]),
-          (0, n.jsxs)(x.Z, {
+          (0, n.jsxs)(m.Z, {
             sx: {
               position: "relative",
               overflow: "hidden",
@@ -553,7 +513,7 @@
               height: "300px",
             },
             children: [
-              n.jsx(x.Z, {
+              n.jsx(m.Z, {
                 sx: {
                   display: "flex",
                   transition: a.transitions.create("transform", {
@@ -564,7 +524,7 @@
                 },
                 children: e.map((e, t) =>
                   n.jsx(
-                    x.Z,
+                    m.Z,
                     {
                       sx: {
                         minWidth: "100%",
@@ -579,7 +539,7 @@
                   ),
                 ),
               }),
-              n.jsx(d.Z, {
+              n.jsx($.Z, {
                 onClick: () => {
                   i((t) => (0 === t ? e.length - 1 : t - 1));
                 },
@@ -589,9 +549,9 @@
                   backgroundColor: a.palette.common.white,
                   color: a.palette.common.black,
                 },
-                children: n.jsx(B.Z, {}),
+                children: n.jsx(E.Z, {}),
               }),
-              n.jsx(d.Z, {
+              n.jsx($.Z, {
                 onClick: () => {
                   i((t) => (t + 1) % e.length);
                 },
@@ -601,65 +561,35 @@
                   backgroundColor: a.palette.common.white,
                   color: a.palette.common.black,
                 },
-                children: n.jsx(H.Z, {}),
+                children: n.jsx(B.Z, {}),
               }),
             ],
           })
         );
       };
       var F = r(9067);
-      let M = ({ children: e, isDrawerOpen: t, drawerWidth: r }) => {
-          let o = (0, s.Z)(),
-            i = (0, F._j)(o.palette.background.default, 0.2);
-          return n.jsx(x.Z, {
-            sx: {
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              minWidth: t ? `calc(100vw - ${r}px)` : "100vw",
-              minHeight: "100vh",
-              background: `linear-gradient(135deg, ${o.palette.background.default} 0%, ${i} 100%)`,
-              boxSizing: "border-box",
-              transition: "min-width 0.3s ease",
-            },
-            children: e,
-          });
-        },
-        R = ({
-          images: e,
-          spacing: t = 2,
-          columns: r = { xs: 12, sm: 6, md: 4, lg: 3, xl: 2 },
-          onClickImage: o,
-        }) => {
-          let i = (0, s.Z)();
-          return n.jsx(W, {
-            spacing: t,
-            columns: r,
-            children: e.map((e, t) =>
-              n.jsx(
-                x.Z,
-                {
-                  component: "img",
-                  src: e.src,
-                  alt: e.alt,
-                  sx: {
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: i.shape.borderRadius,
-                    cursor: "pointer",
-                  },
-                  onClick: () => o(t),
-                },
-                t,
-              ),
-            ),
-          });
-        };
-      var Y = r(9811);
-      let q = ({ src: e, title: t, aspectRatio: r = "16:9" }) => {
+      let H = ({ children: e, isDrawerOpen: t, drawerWidth: r }) => {
+        let o = (0, s.Z)(),
+          i = (0, F._j)(o.palette.background.default, 0.2);
+        return n.jsx(m.Z, {
+          sx: {
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            minWidth: t ? `calc(100vw - ${r}px)` : "100vw",
+            minHeight: "100vh",
+            background: `linear-gradient(135deg, ${o.palette.background.default} 0%, ${i} 100%)`,
+            boxSizing: "border-box",
+            transition: "min-width 0.3s ease",
+          },
+          children: e,
+        });
+      };
+      var M = r(9811);
+      let Y = ({ src: e, title: t, aspectRatio: r = "16:9" }) => {
         let [i, a] = (0, o.useState)(!1);
-        return n.jsx(Y.Z, {
+        return n.jsx(M.Z, {
           elevation: 3,
           sx: { overflow: "hidden" },
           onMouseEnter: () => {
@@ -671,7 +601,7 @@
           onTouchStart: () => {
             a((e) => !e);
           },
-          children: n.jsx(x.Z, {
+          children: n.jsx(m.Z, {
             sx: {
               position: "relative",
               paddingBottom: "16:9" === r ? "56.25%" : "75%",
@@ -695,55 +625,11 @@
           }),
         });
       };
-      var N = r(6664);
-      let O = ({ images: e, open: t, onClose: r, initialIndex: i = 0 }) => {
-        let [a, l] = (0, o.useState)(i);
-        return n.jsx(N.Z, {
-          fullScreen: !0,
-          open: t,
-          onClose: r,
-          children: (0, n.jsxs)(x.Z, {
-            sx: {
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "100%",
-              position: "relative",
-            },
-            children: [
-              n.jsx(x.Z, {
-                component: "img",
-                src: e[a].src,
-                alt: e[a].alt,
-                sx: { maxWidth: "100%", maxHeight: "100%" },
-              }),
-              n.jsx(d.Z, {
-                sx: { position: "absolute", top: 16, right: 16 },
-                onClick: r,
-                children: n.jsx(Z.Z, {}),
-              }),
-              n.jsx(d.Z, {
-                sx: { position: "absolute", left: 16 },
-                onClick: () => {
-                  l((t) => (0 === t ? e.length - 1 : t - 1));
-                },
-                children: "Prev",
-              }),
-              n.jsx(d.Z, {
-                sx: { position: "absolute", right: 16 },
-                onClick: () => {
-                  l((t) => (t + 1) % e.length);
-                },
-                children: "Next",
-              }),
-            ],
-          }),
-        });
-      };
-      var U = r(8681),
-        _ = r(5091),
-        L = r(2719);
-      let J = ({
+      var q = r(8681),
+        O = r(6664),
+        R = r(5091),
+        _ = r(2719);
+      let L = ({
         open: e,
         onClose: t,
         title: r,
@@ -752,18 +638,18 @@
         fullScreenOnMobile: a = !0,
       }) => {
         let l = (0, s.Z)(),
-          c = (0, U.Z)(l.breakpoints.down("sm"));
-        return (0, n.jsxs)(N.Z, {
+          c = (0, q.Z)(l.breakpoints.down("sm"));
+        return (0, n.jsxs)(O.Z, {
           open: e,
           onClose: t,
           fullScreen: a && c,
           maxWidth: i,
           fullWidth: !c,
           children: [
-            (0, n.jsxs)(_.Z, {
+            (0, n.jsxs)(R.Z, {
               children: [
                 r,
-                n.jsx(d.Z, {
+                n.jsx($.Z, {
                   "aria-label": "close",
                   onClick: t,
                   sx: {
@@ -772,48 +658,48 @@
                     top: 8,
                     color: (e) => e.palette.grey[500],
                   },
-                  children: n.jsx(Z.Z, {}),
+                  children: n.jsx(v.Z, {}),
                 }),
               ],
             }),
-            n.jsx(L.Z, { children: n.jsx(x.Z, { children: o }) }),
+            n.jsx(_.Z, { children: n.jsx(m.Z, { children: o }) }),
           ],
         });
       };
-      var V = r(2090);
-      let X = ({ options: e }) =>
-        n.jsx(V.ZP, {
+      var N = r(2090);
+      let U = ({ options: e }) =>
+        n.jsx(N.ZP, {
           container: !0,
           spacing: 4,
           children: e.map((e, t) =>
             n.jsx(
-              V.ZP,
+              N.ZP,
               {
                 item: !0,
                 xs: 12,
                 sm: 6,
                 md: 4,
-                children: (0, n.jsxs)(Y.Z, {
+                children: (0, n.jsxs)(M.Z, {
                   elevation: 3,
                   sx: { padding: 4 },
                   children: [
-                    n.jsx(g.Z, {
+                    n.jsx(x.Z, {
                       variant: "h6",
                       align: "center",
                       children: e.title,
                     }),
-                    n.jsx(g.Z, {
+                    n.jsx(x.Z, {
                       variant: "h4",
                       align: "center",
                       sx: { marginBottom: 2 },
                       children: e.price,
                     }),
-                    n.jsx(x.Z, {
+                    n.jsx(m.Z, {
                       component: "ul",
                       sx: { padding: 0, listStyleType: "none" },
                       children: e.features.map((e, t) =>
                         n.jsx(
-                          g.Z,
+                          x.Z,
                           {
                             component: "li",
                             variant: "body2",
@@ -839,16 +725,16 @@
             ),
           ),
         });
-      var G = r(9689),
-        K = r.n(G);
-      let Q = ({
+      var J = r(9689),
+        V = r.n(J);
+      let X = ({
         title: e = "Default Title",
         description: t = "Default description for the website.",
         keywords: r = "default, keywords, seo",
         image: o = "/default-image.png",
         url: i = "https://www.example.com",
       }) =>
-        (0, n.jsxs)(K(), {
+        (0, n.jsxs)(V(), {
           children: [
             n.jsx("title", { children: e }),
             n.jsx("meta", { name: "description", content: t }),
@@ -863,8 +749,8 @@
             }),
           ],
         });
-      var ee = r(9740);
-      let et = ({
+      var G = r(9740);
+      let K = ({
           children: e,
           startOffset: t = "50%",
           endOffset: r = "0%",
@@ -873,7 +759,7 @@
         }) =>
           (0, n.jsxs)(n.Fragment, {
             children: [
-              n.jsx(ee.E.div, {
+              n.jsx(G.E.div, {
                 initial: { opacity: 0, translateY: t },
                 whileInView: { opacity: 1, translateY: r },
                 viewport: { once: !0, amount: 0.5 },
@@ -885,7 +771,7 @@
               }),
             ],
           }),
-        er = ({
+        Q = ({
           children: e,
           scaleOnHover: t = 0.99,
           duration: r = 0.3,
@@ -893,7 +779,7 @@
         }) =>
           (0, n.jsxs)(n.Fragment, {
             children: [
-              n.jsx(ee.E.div, {
+              n.jsx(G.E.div, {
                 whileHover: { scale: t },
                 transition: { duration: r, ease: o },
                 children: e,
@@ -901,7 +787,7 @@
               n.jsx("noscript", { children: n.jsx("div", { children: e }) }),
             ],
           }),
-        en = ({
+        ee = ({
           children: e,
           scaleOnClick: t = 0.97,
           opacityOnClick: r = 0.9,
@@ -910,7 +796,7 @@
         }) =>
           (0, n.jsxs)(n.Fragment, {
             children: [
-              n.jsx(ee.E.div, {
+              n.jsx(G.E.div, {
                 whileTap: { scale: t, opacity: r },
                 transition: { duration: o, ease: i },
                 children: e,
@@ -1077,7 +963,7 @@
       var h = r(2479),
         x = r(6949),
         p = r(5724),
-        g = r(6572);
+        g = r(1047);
       function u({ children: e }) {
         let [t, r] = (0, i.useState)(!1),
           a = (e) => () => {
@@ -1115,9 +1001,9 @@
                       }),
                     ],
                   }),
-                  n.jsx(g.hU, {
+                  n.jsx(g.m3, {
                     icon: n.jsx(p.Z, {}),
-                    onClick: a(!0),
+                    onClick: () => a(!0),
                     sx: {
                       position: "fixed",
                       top: "1rem",

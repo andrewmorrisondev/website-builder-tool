@@ -19,19 +19,6 @@
       "srcRoute": "/favicon.ico",
       "dataRoute": null
     },
-    "/about": {
-      "experimentalBypassFor": [
-        { "type": "header", "key": "Next-Action" },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/about",
-      "dataRoute": "/about.rsc"
-    },
     "/": {
       "experimentalBypassFor": [
         { "type": "header", "key": "Next-Action" },
@@ -44,13 +31,26 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/",
       "dataRoute": "/index.rsc"
+    },
+    "/about": {
+      "experimentalBypassFor": [
+        { "type": "header", "key": "Next-Action" },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/about",
+      "dataRoute": "/about.rsc"
     }
   },
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "b60a233c83ba9bf6e8812434b5027aa9",
-    "previewModeSigningKey": "30984360a431a235bb977ef789c94f68f1cca1f0c1ab2fafd79dffd248d4558b",
-    "previewModeEncryptionKey": "ae2db3d2b581939427a5840035855ecf56493d580f2d8557b84ce6cf3e2a9cec"
+    "previewModeId": "f2285c4f15c65eb145300e0d633b008e",
+    "previewModeSigningKey": "6ecb59f3865fce5047d84be444dfba26020186b8484cac14ed1faec4abbad09b",
+    "previewModeEncryptionKey": "3a27be679dd7758a2ccd6ee60730c442b86cc4ee26c3fe8df2ce66909788e579"
   }
 }

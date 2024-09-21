@@ -168,7 +168,7 @@
       var m = o(7834),
         f = o(3474),
         u = o(8179),
-        h = o(7907);
+        h = o(8429);
       function x(e) {
         let { children: t } = e,
           [o, n] = (0, l.useState)(!1),
@@ -207,9 +207,9 @@
                       }),
                     ],
                   }),
-                  (0, r.jsx)(h.hU, {
+                  (0, r.jsx)(h.m3, {
                     icon: (0, r.jsx)(u.Z, {}),
-                    onClick: c(!0),
+                    onClick: () => c(!0),
                     sx: {
                       position: "fixed",
                       top: "1rem",
@@ -239,7 +239,7 @@
     1619: function () {},
   },
   function (e) {
-    e.O(0, [612, 252, 707, 907, 293, 286, 744], function () {
+    e.O(0, [612, 252, 707, 429, 293, 286, 744], function () {
       return e((e.s = 6102));
     }),
       (_N_E = e.O());

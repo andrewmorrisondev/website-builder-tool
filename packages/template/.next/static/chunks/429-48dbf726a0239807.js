@@ -1,8 +1,8 @@
 "use strict";
 (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
-  [907],
+  [429],
   {
-    7907: function (e, t, n) {
+    8429: function (e, t, n) {
       n.d(t, {
         uT: function () {
           return F;
@@ -14,58 +14,49 @@
           return Y;
         },
         Z3: function () {
-          return er;
+          return ee;
         },
         t: function () {
-          return k;
-        },
-        Wi: function () {
-          return S;
-        },
-        yo: function () {
-          return B;
-        },
-        ds: function () {
-          return en;
-        },
-        hU: function () {
-          return d;
-        },
-        hJ: function () {
-          return M;
-        },
-        rJ: function () {
-          return g;
-        },
-        ey: function () {
-          return L;
-        },
-        NR: function () {
-          return Q;
-        },
-        u_: function () {
-          return O;
-        },
-        oz: function () {
-          return C;
-        },
-        bv: function () {
-          return X;
-        },
-        Sj: function () {
-          return W;
-        },
-        MS: function () {
-          return et;
-        },
-        $0: function () {
-          return E;
-        },
-        YE: function () {
           return y;
         },
+        Wi: function () {
+          return k;
+        },
+        yo: function () {
+          return I;
+        },
+        ds: function () {
+          return Q;
+        },
+        rJ: function () {
+          return h;
+        },
+        NR: function () {
+          return X;
+        },
+        u_: function () {
+          return U;
+        },
+        oz: function () {
+          return w;
+        },
+        bv: function () {
+          return J;
+        },
+        Sj: function () {
+          return S;
+        },
+        MS: function () {
+          return K;
+        },
+        $0: function () {
+          return T;
+        },
+        YE: function () {
+          return b;
+        },
         vj: function () {
-          return q;
+          return N;
         },
       });
       var r = n(7573),
@@ -82,97 +73,52 @@
               fullWidth: c = !1,
               onClick: d,
               tooltip: u,
-              ...h
+              icon: p,
+              ...m
             } = e,
-            p = (0, l.Z)(),
+            h = (0, l.Z)(),
             x = () => {
               if ("inherit" === n) return "inherit";
-              let e = p.palette[n];
+              let e = h.palette[n];
               return "accent1" === n || "accent2" === n
-                ? p.palette[n]
+                ? h.palette[n]
                 : e && e.main
                   ? e.main
-                  : p.palette.primary.main;
+                  : h.palette.primary.main;
             },
-            m = (0, r.jsx)(o.Z, {
+            g = (0, r.jsx)(o.Z, {
               variant: t,
               size: i,
               fullWidth: c,
               onClick: d,
+              startIcon: p,
               sx: {
-                borderRadius: p.spacing(2),
-                padding: p.spacing(2, 4),
+                borderRadius: h.spacing(2),
+                padding: h.spacing(2, 4),
                 textTransform: "none",
-                fontSize: p.typography.button.fontSize,
-                fontWeight: p.typography.button.fontWeight,
-                color: "contained" === t ? p.palette.common.white : x(),
+                fontSize: h.typography.button.fontSize,
+                fontWeight: h.typography.button.fontWeight,
+                color: "contained" === t ? h.palette.common.white : x(),
                 backgroundColor: "contained" === t ? x() : "transparent",
-                boxShadow: "contained" === t ? p.shadows[1] : "none",
+                boxShadow: "contained" === t ? h.shadows[1] : "none",
                 "&:hover": {
                   backgroundColor:
                     "contained" === t
-                      ? p.palette.action.hover
-                      : p.palette.action.selected,
+                      ? h.palette.action.hover
+                      : h.palette.action.selected,
                 },
               },
-              ...h,
+              ...m,
               children: s,
             });
-          return u ? (0, r.jsx)(a.Z, { title: u, children: m }) : m;
+          return u ? (0, r.jsx)(a.Z, { title: u, children: g }) : g;
         },
-        c = n(417),
-        d = (e) => {
-          let {
-              icon: t,
-              color: n = "primary",
-              size: i = "medium",
-              tooltip: o,
-              variant: s = "contained",
-              shape: d = "round",
-              onClick: u,
-              sx: h = {},
-              ...p
-            } = e,
-            x = (0, l.Z)(),
-            m = () => {
-              if ("inherit" === n) return "inherit";
-              let e = x.palette[n];
-              return "accent1" === n || "accent2" === n
-                ? x.palette[n]
-                : e && e.main
-                  ? e.main
-                  : x.palette.primary.main;
-            },
-            g = {
-              borderRadius: "round" === d ? "50%" : x.spacing(1),
-              color: "contained" === s ? x.palette.common.white : m(),
-              backgroundColor: "contained" === s ? m() : "transparent",
-              boxShadow: "contained" === s ? x.shadows[2] : "none",
-              border: "outlined" === s ? "1px solid ".concat(m()) : "none",
-              padding: x.spacing(1),
-              "&:hover": {
-                backgroundColor:
-                  "contained" === s
-                    ? x.palette.action.hover
-                    : x.palette.action.selected,
-              },
-              ...h,
-            },
-            f = (0, r.jsx)(c.Z, {
-              size: i,
-              onClick: u,
-              sx: g,
-              ...p,
-              children: t,
-            });
-          return o ? (0, r.jsx)(a.Z, { title: o, children: f }) : f;
-        },
-        u = n(1489),
-        h = n(3474),
-        p = n(9799),
-        x = n(9984),
+        c = n(1489),
+        d = n(3474),
+        u = n(9799),
+        p = n(9984),
         m = n(806),
-        g = (e) => {
+        h = (e) => {
           let {
               title: t = "Default Title",
               subtitle: n,
@@ -180,8 +126,8 @@
               actions: o,
               variant: a = "elevation",
               image: s,
-              imageAlt: c = "Card image",
-              imageHeight: d = 200,
+              imageAlt: h = "Card image",
+              imageHeight: x = 200,
               fullWidth: g = !1,
               sx: f = [],
               ...j
@@ -198,40 +144,40 @@
               overflow: "hidden",
               ...f,
             };
-          return (0, r.jsxs)(u.Z, {
+          return (0, r.jsxs)(c.Z, {
             sx: b,
             ...j,
             children: [
               s &&
-                (0, r.jsx)(h.Z, {
+                (0, r.jsx)(d.Z, {
                   component: "img",
                   src: s,
-                  alt: c,
+                  alt: h,
                   sx: {
                     width: "100%",
-                    height: d,
+                    height: x,
                     objectFit: "cover",
                     display: s ? "block" : "none",
                   },
                 }),
-              (0, r.jsxs)(p.Z, {
+              (0, r.jsxs)(u.Z, {
                 children: [
                   t &&
-                    (0, r.jsx)(x.Z, {
+                    (0, r.jsx)(p.Z, {
                       variant: "h5",
                       component: "div",
                       gutterBottom: !0,
                       children: t,
                     }),
                   n &&
-                    (0, r.jsx)(x.Z, {
+                    (0, r.jsx)(p.Z, {
                       variant: "subtitle1",
                       color: "textSecondary",
                       gutterBottom: !0,
                       children: n,
                     }),
                   i &&
-                    (0, r.jsx)(x.Z, {
+                    (0, r.jsx)(p.Z, {
                       variant: "body2",
                       color: "textSecondary",
                       children: i,
@@ -242,9 +188,9 @@
             ],
           });
         },
-        f = n(1887),
-        j = n(3678);
-      (0, f.ZP)(j.Z)((e) => {
+        x = n(1887),
+        g = n(3678);
+      (0, x.ZP)(g.Z)((e) => {
         let { theme: t } = e;
         return {
           position: "fixed",
@@ -254,43 +200,43 @@
           "&:hover": { backgroundColor: t.palette.secondary.main },
         };
       });
-      var Z = n(2527);
-      (0, f.ZP)(Z.Z)((e) => {
+      var f = n(2527);
+      (0, x.ZP)(f.Z)((e) => {
         let { theme: t } = e;
         return { position: "fixed", bottom: t.spacing(8), right: t.spacing(8) };
       });
-      var b = n(7906),
-        v = n(5861),
-        y = (e) => {
+      var j = n(7906),
+        Z = n(5861),
+        b = (e) => {
           let {
               isDrawerOpen: t = !1,
               toggleDrawer: n,
               drawerWidth: o = 240,
               children: a,
             } = e,
-            [l, s] = (0, i.useState)(t);
+            [l, c] = (0, i.useState)(t);
           (0, i.useEffect)(() => {
-            s(t);
+            c(t);
           }, [t]);
-          let c =
+          let u =
             n ||
             ((e) => () => {
-              s(e);
+              c(e);
             });
-          return (0, r.jsx)(b.ZP, {
+          return (0, r.jsx)(j.ZP, {
             anchor: "left",
             open: l,
-            onClose: c(!1),
+            onClose: u(!1),
             variant: "persistent",
             sx: {
               width: o,
               flexShrink: 0,
               "& .MuiDrawer-paper": { width: o, boxSizing: "border-box" },
             },
-            children: (0, r.jsxs)(h.Z, {
+            children: (0, r.jsxs)(d.Z, {
               sx: { width: o, padding: "1rem" },
               children: [
-                (0, r.jsxs)(h.Z, {
+                (0, r.jsxs)(d.Z, {
                   sx: {
                     display: "flex",
                     justifyContent: "space-between",
@@ -300,9 +246,9 @@
                     (0, r.jsx)("h3", {
                       children: "Nothing to See here \uD83D\uDC40",
                     }),
-                    (0, r.jsx)(d, {
-                      icon: (0, r.jsx)(v.Z, {}),
-                      onClick: c(!1),
+                    (0, r.jsx)(s, {
+                      icon: (0, r.jsx)(Z.Z, {}),
+                      onClick: () => u(!0),
                     }),
                   ],
                 }),
@@ -311,22 +257,22 @@
             }),
           });
         },
-        w = n(8471),
-        k = (e) => {
+        v = n(8471),
+        y = (e) => {
           let { onSubmit: t, initialValues: n, width: a = "100%" } = e,
             [l, s] = i.useState(n || { name: "", email: "", message: "" }),
             c = (e) => (t) => {
               s({ ...l, [e]: t.target.value });
             };
-          return (0, r.jsxs)(h.Z, {
+          return (0, r.jsxs)(d.Z, {
             component: "form",
             onSubmit: (e) => {
               e.preventDefault(), t(l), s({ name: "", email: "", message: "" });
             },
             sx: { width: a },
             children: [
-              (0, r.jsx)(x.Z, { variant: "h6", children: "Contact Us" }),
-              (0, r.jsx)(w.Z, {
+              (0, r.jsx)(p.Z, { variant: "h6", children: "Contact Us" }),
+              (0, r.jsx)(v.Z, {
                 label: "Name",
                 placeholder: l.name,
                 onChange: c("name"),
@@ -334,7 +280,7 @@
                 margin: "normal",
                 required: !0,
               }),
-              (0, r.jsx)(w.Z, {
+              (0, r.jsx)(v.Z, {
                 label: "Email",
                 placeholder: l.email,
                 onChange: c("email"),
@@ -342,7 +288,7 @@
                 margin: "normal",
                 required: !0,
               }),
-              (0, r.jsx)(w.Z, {
+              (0, r.jsx)(v.Z, {
                 label: "Message",
                 placeholder: l.message,
                 onChange: c("message"),
@@ -361,24 +307,24 @@
             ],
           });
         },
-        C = (e) => {
+        w = (e) => {
           let { onSubmit: t, initialEmail: n = "", width: a = "100%" } = e,
             [l, s] = i.useState(n),
-            [c, d] = i.useState(!1),
-            u = (e) =>
+            [c, u] = i.useState(!1),
+            m = (e) =>
               /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(e);
-          return (0, r.jsxs)(h.Z, {
+          return (0, r.jsxs)(d.Z, {
             component: "form",
             onSubmit: (e) => {
-              e.preventDefault(), u(l) ? (t(l), s(""), d(!1)) : d(!0);
+              e.preventDefault(), m(l) ? (t(l), s(""), u(!1)) : u(!0);
             },
             sx: { width: a },
             children: [
-              (0, r.jsx)(x.Z, {
+              (0, r.jsx)(p.Z, {
                 variant: "h6",
                 children: "Sign up for our Newsletter",
               }),
-              (0, r.jsx)(w.Z, {
+              (0, r.jsx)(v.Z, {
                 label: "Email",
                 value: l,
                 placeholder: "Enter your email",
@@ -399,7 +345,7 @@
             ],
           });
         },
-        S = (e) => {
+        k = (e) => {
           let {
             label: t,
             value: n,
@@ -410,7 +356,7 @@
             rows: s = 1,
             width: c = "100%",
           } = e;
-          return (0, r.jsx)(w.Z, {
+          return (0, r.jsx)(v.Z, {
             label: t,
             value: n,
             onChange: (e) => i(e.target.value),
@@ -423,8 +369,8 @@
             sx: { width: c },
           });
         },
-        T = n(4813),
-        W = (e) => {
+        C = n(4813),
+        S = (e) => {
           let {
               children: t,
               spacing: n = 2,
@@ -433,7 +379,7 @@
               justifyContent: a = "center",
             } = e,
             s = (0, l.Z)();
-          return (0, r.jsx)(T.Z, {
+          return (0, r.jsx)(C.Z, {
             container: !0,
             spacing: n,
             alignItems: o,
@@ -458,7 +404,7 @@
             children: t,
           });
         },
-        E = (e) => {
+        T = (e) => {
           let {
               children: t,
               title: n,
@@ -468,42 +414,42 @@
               textAlign: s = "left",
             } = e,
             c = (0, l.Z)(),
-            d = a || c.palette.background.default;
-          return (0, r.jsxs)(h.Z, {
-            sx: { backgroundColor: d, padding: c.spacing(o), textAlign: s },
+            u = a || c.palette.background.default;
+          return (0, r.jsxs)(d.Z, {
+            sx: { backgroundColor: u, padding: c.spacing(o), textAlign: s },
             children: [
-              n && (0, r.jsx)(x.Z, { variant: "h4", children: n }),
-              i && (0, r.jsx)(x.Z, { variant: "subtitle1", children: i }),
-              (0, r.jsx)(h.Z, { children: t }),
+              n && (0, r.jsx)(p.Z, { variant: "h4", children: n }),
+              i && (0, r.jsx)(p.Z, { variant: "subtitle1", children: i }),
+              (0, r.jsx)(d.Z, { children: t }),
             ],
           });
         },
-        D = n(5565),
-        z = n(9547);
-      function I() {
-        let e = (0, D._)([
+        E = n(5565),
+        W = n(9547);
+      function D() {
+        let e = (0, E._)([
           "\n  0%, 20%, 50%, 80%, 100% {\n    transform: translateY(0);\n  }\n  40% {\n    transform: translateY(-10px);\n  }\n  60% {\n    transform: translateY(-5px);\n  }\n",
         ]);
         return (
-          (I = function () {
+          (D = function () {
             return e;
           }),
           e
         );
       }
-      let _ = (0, n(338).F4)(I());
-      var B = (e) => {
+      let z = (0, n(338).F4)(D());
+      var I = (e) => {
           let {
               title: t,
               subtitle: n,
               backgroundImage: a,
               ctaText: s,
               onCtaClick: c,
-              align: d = "center",
-              fullHeight: u = !1,
+              align: u = "center",
+              fullHeight: m = !1,
             } = e,
-            p = (0, l.Z)(),
-            [m, g] = (0, i.useState)(!1);
+            h = (0, l.Z)(),
+            [x, g] = (0, i.useState)(!1);
           return (
             (0, i.useEffect)(() => {
               let e = () => {
@@ -516,35 +462,35 @@
                 }
               );
             }, []),
-            (0, r.jsxs)(h.Z, {
+            (0, r.jsxs)(d.Z, {
               sx: {
                 backgroundImage: "url(".concat(a, ")"),
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                padding: p.spacing(8, 4),
-                textAlign: d,
-                color: p.palette.common.white,
+                padding: h.spacing(8, 4),
+                textAlign: u,
+                color: h.palette.common.white,
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems:
-                  "center" === d
+                  "center" === u
                     ? "center"
-                    : "right" === d
+                    : "right" === u
                       ? "flex-end"
                       : "flex-start",
-                height: u ? "100dvh" : "25em",
+                height: m ? "100dvh" : "25em",
                 position: "relative",
                 width: "100%",
               },
               children: [
-                (0, r.jsx)(x.Z, {
+                (0, r.jsx)(p.Z, {
                   variant: "h2",
                   gutterBottom: !0,
                   children: t,
                 }),
                 n &&
-                  (0, r.jsx)(x.Z, {
+                  (0, r.jsx)(p.Z, {
                     variant: "h6",
                     gutterBottom: !0,
                     children: n,
@@ -554,38 +500,38 @@
                     variant: "contained",
                     color: "primary",
                     onClick: c,
-                    sx: { marginTop: p.spacing(2) },
+                    sx: { marginTop: h.spacing(2) },
                     children: s,
                   }),
-                u &&
-                  (0, r.jsxs)(h.Z, {
+                m &&
+                  (0, r.jsxs)(d.Z, {
                     sx: {
                       position: "absolute",
-                      bottom: p.spacing(4),
+                      bottom: h.spacing(4),
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
                       width: "100%",
-                      animation: "".concat(_, " 2s infinite"),
+                      animation: "".concat(z, " 2s infinite"),
                       cursor: "pointer",
-                      color: p.palette.common.white,
-                      opacity: m ? 0 : 1,
+                      color: h.palette.common.white,
+                      opacity: x ? 0 : 1,
                       transition: "opacity 0.5s ease-in-out",
                     },
                     children: [
-                      (0, r.jsxs)(h.Z, {
+                      (0, r.jsxs)(d.Z, {
                         sx: { display: { xs: "none", md: "block" } },
                         children: [
-                          (0, r.jsx)(x.Z, {
+                          (0, r.jsx)(p.Z, {
                             variant: "body1",
                             children: "Scroll Down",
                           }),
-                          (0, r.jsx)(z.Z, { sx: { fontSize: "2rem" } }),
+                          (0, r.jsx)(W.Z, { sx: { fontSize: "2rem" } }),
                         ],
                       }),
-                      (0, r.jsx)(h.Z, {
+                      (0, r.jsx)(d.Z, {
                         sx: { display: { xs: "block", md: "none" } },
-                        children: (0, r.jsx)(z.Z, { sx: { fontSize: "3rem" } }),
+                        children: (0, r.jsx)(W.Z, { sx: { fontSize: "3rem" } }),
                       }),
                     ],
                   }),
@@ -593,8 +539,9 @@
             })
           );
         },
-        P = n(9217),
-        N = n(8964),
+        _ = n(417),
+        B = n(9217),
+        P = n(8964),
         Y = (e) => {
           let { items: t, interval: n = 5e3 } = e,
             [o, a] = (0, i.useState)(0),
@@ -608,7 +555,7 @@
                 return () => clearInterval(e);
               }
             }, [n, t.length]),
-            (0, r.jsxs)(h.Z, {
+            (0, r.jsxs)(d.Z, {
               sx: {
                 position: "relative",
                 overflow: "hidden",
@@ -619,7 +566,7 @@
                 height: "300px",
               },
               children: [
-                (0, r.jsx)(h.Z, {
+                (0, r.jsx)(d.Z, {
                   sx: {
                     display: "flex",
                     transition: s.transitions.create("transform", {
@@ -630,7 +577,7 @@
                   },
                   children: t.map((e, t) =>
                     (0, r.jsx)(
-                      h.Z,
+                      d.Z,
                       {
                         sx: {
                           minWidth: "100%",
@@ -645,7 +592,7 @@
                     ),
                   ),
                 }),
-                (0, r.jsx)(c.Z, {
+                (0, r.jsx)(_.Z, {
                   onClick: () => {
                     a((e) => (0 === e ? t.length - 1 : e - 1));
                   },
@@ -655,9 +602,9 @@
                     backgroundColor: s.palette.common.white,
                     color: s.palette.common.black,
                   },
-                  children: (0, r.jsx)(P.Z, {}),
+                  children: (0, r.jsx)(B.Z, {}),
                 }),
-                (0, r.jsx)(c.Z, {
+                (0, r.jsx)(_.Z, {
                   onClick: () => {
                     a((e) => (e + 1) % t.length);
                   },
@@ -667,7 +614,7 @@
                     backgroundColor: s.palette.common.white,
                     color: s.palette.common.black,
                   },
-                  children: (0, r.jsx)(N.Z, {}),
+                  children: (0, r.jsx)(P.Z, {}),
                 }),
               ],
             })
@@ -678,7 +625,7 @@
           let { children: t, isDrawerOpen: n, drawerWidth: i } = e,
             o = (0, l.Z)(),
             a = (0, A._j)(o.palette.background.default, 0.2);
-          return (0, r.jsx)(h.Z, {
+          return (0, r.jsx)(d.Z, {
             sx: {
               display: "flex",
               flexDirection: "column",
@@ -695,42 +642,11 @@
             children: t,
           });
         },
-        M = (e) => {
-          let {
-              images: t,
-              spacing: n = 2,
-              columns: i = { xs: 12, sm: 6, md: 4, lg: 3, xl: 2 },
-              onClickImage: o,
-            } = e,
-            a = (0, l.Z)();
-          return (0, r.jsx)(W, {
-            spacing: n,
-            columns: i,
-            children: t.map((e, t) =>
-              (0, r.jsx)(
-                h.Z,
-                {
-                  component: "img",
-                  src: e.src,
-                  alt: e.alt,
-                  sx: {
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: a.shape.borderRadius,
-                    cursor: "pointer",
-                  },
-                  onClick: () => o(t),
-                },
-                t,
-              ),
-            ),
-          });
-        },
-        R = n(5388),
-        q = (e) => {
+        M = n(5388),
+        N = (e) => {
           let { src: t, title: n, aspectRatio: o = "16:9" } = e,
             [a, l] = (0, i.useState)(!1);
-          return (0, r.jsx)(R.Z, {
+          return (0, r.jsx)(M.Z, {
             elevation: 3,
             sx: { overflow: "hidden" },
             onMouseEnter: () => {
@@ -742,7 +658,7 @@
             onTouchStart: () => {
               l((e) => !e);
             },
-            children: (0, r.jsx)(h.Z, {
+            children: (0, r.jsx)(d.Z, {
               sx: {
                 position: "relative",
                 paddingBottom: "16:9" === o ? "56.25%" : "75%",
@@ -768,56 +684,11 @@
             }),
           });
         },
-        H = n(2512),
-        L = (e) => {
-          let { images: t, open: n, onClose: o, initialIndex: a = 0 } = e,
-            [l, s] = (0, i.useState)(a);
-          return (0, r.jsx)(H.Z, {
-            fullScreen: !0,
-            open: n,
-            onClose: o,
-            children: (0, r.jsxs)(h.Z, {
-              sx: {
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "100%",
-                position: "relative",
-              },
-              children: [
-                (0, r.jsx)(h.Z, {
-                  component: "img",
-                  src: t[l].src,
-                  alt: t[l].alt,
-                  sx: { maxWidth: "100%", maxHeight: "100%" },
-                }),
-                (0, r.jsx)(c.Z, {
-                  sx: { position: "absolute", top: 16, right: 16 },
-                  onClick: o,
-                  children: (0, r.jsx)(v.Z, {}),
-                }),
-                (0, r.jsx)(c.Z, {
-                  sx: { position: "absolute", left: 16 },
-                  onClick: () => {
-                    s((e) => (0 === e ? t.length - 1 : e - 1));
-                  },
-                  children: "Prev",
-                }),
-                (0, r.jsx)(c.Z, {
-                  sx: { position: "absolute", right: 16 },
-                  onClick: () => {
-                    s((e) => (e + 1) % t.length);
-                  },
-                  children: "Next",
-                }),
-              ],
-            }),
-          });
-        },
-        U = n(182),
-        J = n(4224),
-        $ = n(5717),
-        O = (e) => {
+        q = n(182),
+        L = n(2512),
+        R = n(4224),
+        H = n(5717),
+        U = (e) => {
           let {
               open: t,
               onClose: n,
@@ -826,19 +697,19 @@
               maxWidth: a = "md",
               fullScreenOnMobile: s = !0,
             } = e,
-            d = (0, l.Z)(),
-            u = (0, U.Z)(d.breakpoints.down("sm"));
-          return (0, r.jsxs)(H.Z, {
+            c = (0, l.Z)(),
+            u = (0, q.Z)(c.breakpoints.down("sm"));
+          return (0, r.jsxs)(L.Z, {
             open: t,
             onClose: n,
             fullScreen: s && u,
             maxWidth: a,
             fullWidth: !u,
             children: [
-              (0, r.jsxs)(J.Z, {
+              (0, r.jsxs)(R.Z, {
                 children: [
                   i,
-                  (0, r.jsx)(c.Z, {
+                  (0, r.jsx)(_.Z, {
                     "aria-label": "close",
                     onClick: n,
                     sx: {
@@ -847,49 +718,49 @@
                       top: 8,
                       color: (e) => e.palette.grey[500],
                     },
-                    children: (0, r.jsx)(v.Z, {}),
+                    children: (0, r.jsx)(Z.Z, {}),
                   }),
                 ],
               }),
-              (0, r.jsx)($.Z, { children: (0, r.jsx)(h.Z, { children: o }) }),
+              (0, r.jsx)(H.Z, { children: (0, r.jsx)(d.Z, { children: o }) }),
             ],
           });
         },
-        V = n(5596),
-        X = (e) => {
+        $ = n(5596),
+        J = (e) => {
           let { options: t } = e;
-          return (0, r.jsx)(V.ZP, {
+          return (0, r.jsx)($.ZP, {
             container: !0,
             spacing: 4,
             children: t.map((e, t) =>
               (0, r.jsx)(
-                V.ZP,
+                $.ZP,
                 {
                   item: !0,
                   xs: 12,
                   sm: 6,
                   md: 4,
-                  children: (0, r.jsxs)(R.Z, {
+                  children: (0, r.jsxs)(M.Z, {
                     elevation: 3,
                     sx: { padding: 4 },
                     children: [
-                      (0, r.jsx)(x.Z, {
+                      (0, r.jsx)(p.Z, {
                         variant: "h6",
                         align: "center",
                         children: e.title,
                       }),
-                      (0, r.jsx)(x.Z, {
+                      (0, r.jsx)(p.Z, {
                         variant: "h4",
                         align: "center",
                         sx: { marginBottom: 2 },
                         children: e.price,
                       }),
-                      (0, r.jsx)(h.Z, {
+                      (0, r.jsx)(d.Z, {
                         component: "ul",
                         sx: { padding: 0, listStyleType: "none" },
                         children: e.features.map((e, t) =>
                           (0, r.jsx)(
-                            x.Z,
+                            p.Z,
                             {
                               component: "li",
                               variant: "body2",
@@ -916,9 +787,9 @@
             ),
           });
         },
-        G = n(10),
-        K = n.n(G),
-        Q = (e) => {
+        O = n(10),
+        V = n.n(O),
+        X = (e) => {
           let {
             title: t = "Default Title",
             description: n = "Default description for the website.",
@@ -926,7 +797,7 @@
             image: o = "/default-image.png",
             url: a = "https://www.example.com",
           } = e;
-          return (0, r.jsxs)(K(), {
+          return (0, r.jsxs)(V(), {
             children: [
               (0, r.jsx)("title", { children: t }),
               (0, r.jsx)("meta", { name: "description", content: n }),
@@ -942,8 +813,8 @@
             ],
           });
         },
-        ee = n(6578),
-        et = (e) => {
+        G = n(6578),
+        K = (e) => {
           let {
             children: t,
             startOffset: n = "50%",
@@ -953,7 +824,7 @@
           } = e;
           return (0, r.jsxs)(r.Fragment, {
             children: [
-              (0, r.jsx)(ee.E.div, {
+              (0, r.jsx)(G.E.div, {
                 initial: { opacity: 0, translateY: n },
                 whileInView: { opacity: 1, translateY: i },
                 viewport: { once: !0, amount: 0.5 },
@@ -969,7 +840,7 @@
             ],
           });
         },
-        en = (e) => {
+        Q = (e) => {
           let {
             children: t,
             scaleOnHover: n = 0.99,
@@ -978,7 +849,7 @@
           } = e;
           return (0, r.jsxs)(r.Fragment, {
             children: [
-              (0, r.jsx)(ee.E.div, {
+              (0, r.jsx)(G.E.div, {
                 whileHover: { scale: n },
                 transition: { duration: i, ease: o },
                 children: t,
@@ -989,7 +860,7 @@
             ],
           });
         },
-        er = (e) => {
+        ee = (e) => {
           let {
             children: t,
             scaleOnClick: n = 0.97,
@@ -999,7 +870,7 @@
           } = e;
           return (0, r.jsxs)(r.Fragment, {
             children: [
-              (0, r.jsx)(ee.E.div, {
+              (0, r.jsx)(G.E.div, {
                 whileTap: { scale: n, opacity: i },
                 transition: { duration: o, ease: a },
                 children: t,

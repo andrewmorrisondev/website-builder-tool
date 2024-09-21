@@ -1910,7 +1910,7 @@
         l = r(5340),
         u = r(96),
         c = r(6433),
-        d = r(9598),
+        d = r(6572),
         p = r(6684);
       class f {
         static create() {
@@ -10975,7 +10975,7 @@
             ref: t,
           });
         });
-      var eI = r(9598),
+      var eI = r(6572),
         eD = r(6433);
       let eN = r(2096).Z;
       var eL = r(4664);
@@ -13925,7 +13925,7 @@ To suppress this warning, you need to explicitly provide the \`palette.${t}Chann
         return [i ? e : a, l];
       };
     },
-    9598: (e, t, r) => {
+    6572: (e, t, r) => {
       "use strict";
       r.d(t, { Z: () => n });
       let n = r(519).Z;

@@ -31,7 +31,7 @@
         "use strict";
         r.r(t),
           r.d(t, {
-            GlobalError: () => a.a,
+            GlobalError: () => n.a,
             __next_app__: () => u,
             originalPathname: () => p,
             pages: () => d,
@@ -44,10 +44,10 @@
         var i = r(3282),
           s = r(5736),
           o = r(3906),
-          a = r.n(o),
-          n = r(6880),
+          n = r.n(o),
+          a = r(6880),
           l = {};
-        for (let e in n)
+        for (let e in a)
           0 >
             [
               "default",
@@ -57,7 +57,7 @@
               "originalPathname",
               "__next_app__",
               "routeModule",
-            ].indexOf(e) && (l[e] = () => n[e]);
+            ].indexOf(e) && (l[e] = () => a[e]);
         r.d(t, l);
         let c = [
             "",
@@ -132,17 +132,15 @@
         var i = r(3227),
           s = r(3677),
           o = r(6949),
-          a = r(5168),
-          n = r(6572);
+          n = r(5168),
+          a = r(1047);
         let l = () => {
           let [e, t] = (0, s.useState)(!1),
             [r, l] = (0, s.useState)(""),
             [c, d] = (0, s.useState)({ name: "", email: "", message: "" }),
-            [p, u] = (0, s.useState)(!1),
-            [m, x] = (0, s.useState)(0),
-            g = [
+            p = [
               i.jsx(
-                n.rJ,
+                a.rJ,
                 {
                   title: "Service 1",
                   description: "We provide top-notch web development services.",
@@ -150,7 +148,7 @@
                 1,
               ),
               i.jsx(
-                n.rJ,
+                a.rJ,
                 {
                   title: "Service 2",
                   description:
@@ -159,23 +157,18 @@
                 2,
               ),
               i.jsx(
-                n.rJ,
+                a.rJ,
                 {
                   title: "Service 3",
                   description: "Get comprehensive digital marketing solutions.",
                 },
                 3,
               ),
-            ],
-            h = [
-              { src: "/web-avatar@2x.png", alt: "Image of Andy" },
-              { src: "/web-avatar@2x.png", alt: "Another Image" },
-              { src: "/web-avatar@2x.png", alt: "Third Image" },
             ];
           return (0, i.jsxs)(i.Fragment, {
             children: [
-              i.jsx(n.NR, {}),
-              i.jsx(n.yo, {
+              i.jsx(a.NR, {}),
+              i.jsx(a.yo, {
                 title: "Welcome to Our Company",
                 subtitle: "We create beautiful digital experiences",
                 backgroundImage: "/web-avatar@2x.png",
@@ -189,25 +182,25 @@
               (0, i.jsxs)(o.Z, {
                 padding: 4,
                 children: [
-                  i.jsx(a.Z, {
+                  i.jsx(n.Z, {
                     variant: "h4",
                     gutterBottom: !0,
                     children: "Our Services",
                   }),
-                  i.jsx(n.lr, { items: g, interval: 5e3 }),
+                  i.jsx(a.lr, { items: p, interval: 5e3 }),
                 ],
               }),
               (0, i.jsxs)(o.Z, {
                 padding: 4,
                 children: [
-                  i.jsx(a.Z, {
+                  i.jsx(n.Z, {
                     variant: "h4",
                     gutterBottom: !0,
                     children: "Example Usage of Dynamic Forms",
                   }),
                   i.jsx(o.Z, {
                     marginBottom: 4,
-                    children: i.jsx(n.t, {
+                    children: i.jsx(a.t, {
                       onSubmit: (e) => {
                         d(e), console.log("Contact Form Submitted:", e);
                       },
@@ -215,7 +208,7 @@
                   }),
                   i.jsx(o.Z, {
                     marginBottom: 4,
-                    children: i.jsx(n.oz, {
+                    children: i.jsx(a.oz, {
                       onSubmit: (e) => {
                         console.log("Newsletter Signup Submitted:", e);
                       },
@@ -223,11 +216,11 @@
                   }),
                   (0, i.jsxs)(o.Z, {
                     children: [
-                      i.jsx(a.Z, {
+                      i.jsx(n.Z, {
                         variant: "h6",
                         children: "Custom Form Field",
                       }),
-                      i.jsx(n.Wi, {
+                      i.jsx(a.Wi, {
                         label: "Custom Input",
                         value: r,
                         onChange: (e) => {
@@ -235,7 +228,7 @@
                         },
                         required: !0,
                       }),
-                      (0, i.jsxs)(a.Z, {
+                      (0, i.jsxs)(n.Z, {
                         variant: "body1",
                         color: "textSecondary",
                         children: ["Current Form Field Value: ", r],
@@ -246,13 +239,13 @@
                     (0, i.jsxs)(o.Z, {
                       marginTop: 4,
                       children: [
-                        i.jsx(a.Z, {
+                        i.jsx(n.Z, {
                           variant: "h6",
                           children: "Submitted Contact Form Data:",
                         }),
-                        (0, i.jsxs)(a.Z, { children: ["Name: ", c.name] }),
-                        (0, i.jsxs)(a.Z, { children: ["Email: ", c.email] }),
-                        (0, i.jsxs)(a.Z, {
+                        (0, i.jsxs)(n.Z, { children: ["Name: ", c.name] }),
+                        (0, i.jsxs)(n.Z, { children: ["Email: ", c.email] }),
+                        (0, i.jsxs)(n.Z, {
                           children: ["Message: ", c.message],
                         }),
                       ],
@@ -261,31 +254,31 @@
               }),
               (0, i.jsxs)(o.Z, {
                 children: [
-                  i.jsx(n.$0, {
+                  i.jsx(a.$0, {
                     title: "Our Services",
                     subtitle: "We provide the best services tailored for you",
                     textAlign: "center",
                     padding: 6,
-                    children: (0, i.jsxs)(n.Sj, {
+                    children: (0, i.jsxs)(a.Sj, {
                       spacing: 4,
                       columns: { xs: 12, sm: 6, md: 4 },
                       children: [
-                        i.jsx(n.rJ, {
+                        i.jsx(a.rJ, {
                           title: "Service 1",
                           description:
                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                         }),
-                        i.jsx(n.rJ, {
+                        i.jsx(a.rJ, {
                           title: "Service 2",
                           description:
                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                         }),
-                        i.jsx(n.rJ, {
+                        i.jsx(a.rJ, {
                           title: "Service 3",
                           description:
                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                         }),
-                        i.jsx(n.rJ, {
+                        i.jsx(a.rJ, {
                           title: "Service 4",
                           description:
                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -293,14 +286,14 @@
                       ],
                     }),
                   }),
-                  (0, i.jsxs)(n.$0, {
+                  (0, i.jsxs)(a.$0, {
                     padding: 4,
                     children: [
-                      i.jsx(a.Z, { variant: "h5", children: "About Us" }),
-                      i.jsx(n.MS, {
-                        children: i.jsx(n.ds, {
-                          children: i.jsx(n.Z3, {
-                            children: i.jsx(a.Z, {
+                      i.jsx(n.Z, { variant: "h5", children: "About Us" }),
+                      i.jsx(a.MS, {
+                        children: i.jsx(a.ds, {
+                          children: i.jsx(a.Z3, {
+                            children: i.jsx(n.Z, {
                               variant: "body1",
                               children:
                                 "We are a company dedicated to providing high-quality services to meet your needs. Our experienced team is here to assist you in every step of the way.",
@@ -312,23 +305,7 @@
                   }),
                 ],
               }),
-              i.jsx(n.hJ, {
-                images: h,
-                spacing: 2,
-                columns: { xs: 12, sm: 6, md: 4, lg: 3, xl: 2 },
-                onClickImage: (e) => {
-                  x(e), u(!0);
-                },
-              }),
-              i.jsx(n.ey, {
-                images: h,
-                open: p,
-                onClose: () => {
-                  u(!1);
-                },
-                initialIndex: m,
-              }),
-              i.jsx(n.vj, {
+              i.jsx(a.vj, {
                 title: "demo video",
                 src: "https://www.youtube.com/embed/pCTTOnSpupo",
               }),
@@ -338,7 +315,7 @@
                     onClick: () => t(!0),
                     children: "Open Modal",
                   }),
-                  i.jsx(n.u_, {
+                  i.jsx(a.u_, {
                     open: e,
                     onClose: () => t(!1),
                     title: "My Modal",
@@ -346,13 +323,9 @@
                       children: "This is a modal content.",
                     }),
                   }),
-                  i.jsx("button", {
-                    onClick: () => u(!0),
-                    children: "Open Lightbox",
-                  }),
                 ],
               }),
-              i.jsx(n.bv, {
+              i.jsx(a.bv, {
                 options: [
                   {
                     title: "Basic",
