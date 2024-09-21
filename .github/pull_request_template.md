@@ -6,12 +6,6 @@
 
 ### Commit Messages
 
-- update package tsconfig
-- Delete packages/template/.next/build-manifest.json
-- Delete packages/template/.next/app-build-manifest.json
-- Delete packages/template/.next/BUILD_ID
-- Delete packages/template/.next/app-path-routes-manifest.json
-- add .next to gitignore
 - fix linting error
 - update pr template
 - fix sonarcloud flags
