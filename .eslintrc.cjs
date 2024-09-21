@@ -81,6 +81,7 @@ module.exports = {
             depth: 3,
           },
         ],
+        "next/no-html-link-for-pages": "off",
       },
     },
 
