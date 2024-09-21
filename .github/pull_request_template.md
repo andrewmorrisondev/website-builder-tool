@@ -7,6 +7,7 @@
 ### Commit Messages
 
 - update vercel.json
+- update vercel.json
 - add vercel.json
 - update package.json
 - update vercel build command
