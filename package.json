@@ -8,12 +8,17 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm run dev --workspace=template",
-    "build": "npm run build --workspace=template",
-    "start": "npm run start --workspace=template",
-    "lint": "npm run lint --workspace=template",
-    "test": "npm run test --workspace=template",
-    "type-check": "tsc --noEmit -b packages/*"
+    "dev": "npm run _dev --",
+    "build": "npm run _build --",
+    "start": "npm run _start --",
+    "lint": "npm run _lint --workspaces",
+    "test": "npm run _test --workspaces",
+    "type-check": "tsc --noEmit -b packages/*",
+    "_dev": "WORKSPACE=${WORKSPACE:-app} npm run dev --workspace=${WORKSPACE:-app}",
+    "_build": "WORKSPACE=${WORKSPACE:-app} npm run build --workspace=${WORKSPACE:-app}",
+    "_start": "WORKSPACE=${WORKSPACE:-app} npm run start --workspace=${WORKSPACE:-app}",
+    "_lint": "WORKSPACE=${WORKSPACE:-app} npm run lint --workspace=${WORKSPACE:-app}",
+    "_test": "WORKSPACE=${WORKSPACE:-app} npm run test --workspace=${WORKSPACE:-app}"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
