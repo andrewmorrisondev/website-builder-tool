@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "name": "website-builder-tool-template",
+  "builds": [
+    {
+      "src": "packages/template/package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "buildCommand": "make project PKG=packages/template",
+  "outputDirectory": "packages/template/.next",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/packages/template/$1"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/packages/template/$1"
+    }
+  ]
+}

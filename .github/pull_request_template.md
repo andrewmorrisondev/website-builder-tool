@@ -6,6 +6,7 @@
 
 ### Commit Messages
 
+- update package.json
 - update vercel build command
 - update workplace paths
 - uhhh

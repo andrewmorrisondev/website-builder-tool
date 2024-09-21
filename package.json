@@ -7,6 +7,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "engines": {
+    "node": ">=20.x"
+  },
   "scripts": {
     "dev": "npm run _dev --",
     "build": "npm run _build --",
