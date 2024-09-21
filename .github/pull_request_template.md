@@ -6,6 +6,7 @@
 
 ### Commit Messages
 
+- stop tracking .next build artifacts
 - update package tsconfig
 - Delete packages/template/.next/build-manifest.json
 - Delete packages/template/.next/app-build-manifest.json
