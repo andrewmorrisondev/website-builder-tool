@@ -6,6 +6,7 @@
 
 ### Commit Messages
 
+- fix linting error
 - update pr template
 - fix sonarcloud flags
 - update eslint config

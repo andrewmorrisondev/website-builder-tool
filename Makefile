@@ -57,7 +57,7 @@ project: clean
 		cd $(PKG) && \
 		$(call CHECK,"Installing dependencies", $(NPM) install) && \
 		$(call CHECK,"Formatting code........", npx prettier --write .) && \
-		$(call CHECK,"Linting code...........", yarn workspaces run lint --fix) && \
+		$(call CHECK,"Linting code...........", $(NPM) run lint --fix) && \
 		$(call CHECK,"Building project.......", $(NEXT) build); \
 	else \
 		for package in $(PACKAGES); do \
@@ -66,7 +66,7 @@ project: clean
 				(cd $$package && \
 				$(call CHECK,"Installing dependencies", $(NPM) install) && \
 				$(call CHECK,"Formatting code........", npx prettier --write .) && \
-				$(call CHECK,"Linting code...........", yarn workspaces run lint --fix) && \
+				$(call CHECK,"Linting code...........", $(NPM) run lint --fix) && \
 				$(call CHECK,"Building project.......", $(NEXT) build)) || { echo "Build failed for $$package"; exit 1; }; \
 			else \
 				echo "Skipping $$package, directory not found"; \
@@ -86,4 +86,3 @@ packages/%:
 # Default target
 %:
 	@:
-# stable build
