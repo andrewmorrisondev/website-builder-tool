@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "name": "website-builder-tool",
-  "buildCommand": "make -f ../../Makefile project PKG=packages/template",
-  "outputDirectory": "packages/template/.next",
-  "env": {
-    "NEXT_PUBLIC_API_URL": "@next_public_api_url"
-  }
-}

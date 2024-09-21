@@ -6,6 +6,7 @@
 
 ### Commit Messages
 
+- upate vercel.json
 - update vercel.json
 - update vercel.json
 - add vercel.json

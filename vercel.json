@@ -1,0 +1,9 @@
+{
+  "projects": [
+    {
+      "src": "packages/template",
+      "buildCommand": "make -f ../../Makefile project PKG=packages/template",
+      "outputDirectory": "packages/template/.next"
+    }
+  ]
+}
