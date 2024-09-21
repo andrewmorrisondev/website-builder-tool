@@ -6,6 +6,7 @@
 
 ### Commit Messages
 
+- update vercel config
 - attempt vercel build
 - upate vercel.json
 - update vercel.json
