@@ -6,6 +6,6 @@
     }
   ],
   "scripts": {
-    "build": "make project"
+    "build": "yarn build"
   }
 }
