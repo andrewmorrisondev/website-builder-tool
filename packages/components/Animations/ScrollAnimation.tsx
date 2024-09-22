@@ -49,9 +49,6 @@ const ScrollAnimation: FC<ScrollAnimationProps> = ({
         {children}
       </motion.div>
       {/* Fallback content in case JavaScript is disabled */}
-      <noscript>
-        <div style={{ opacity: 1 }}>{children}</div>
-      </noscript>
     </>
   );
 };

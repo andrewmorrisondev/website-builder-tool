@@ -4,7 +4,8 @@
       "src": "packages/template/package.json",
       "use": "@vercel/node",
       "config": {
-        "buildCommand": "ls -l ./Makefile && make -f ./Makefile project PKG=packages/template"
+        "installCommand": "yarn install",
+        "buildCommand": "make -f ./Makefile project PKG=packages/template"
       }
     }
   ]

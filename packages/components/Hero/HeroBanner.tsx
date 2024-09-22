@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, Typography, Button, useTheme } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { keyframes } from "@emotion/react"; // To handle keyframes animation
+import { keyframes } from "@emotion/react"; // For keyframes animation
 
 /**
  * Props for the HeroBanner component.
@@ -25,7 +25,7 @@ interface HeroBannerProps {
   fullHeight?: boolean; // New prop to control full viewport height
 }
 
-// Keyframes for the scroll animation
+// Keyframes for the scroll encourager bounce animation
 const bounceAnimation = keyframes`
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
@@ -42,6 +42,9 @@ const bounceAnimation = keyframes`
  * HeroBanner component - displays a full-width banner with a background image,
  * title, optional subtitle, and a call-to-action button.
  * Fully customizable through props, it aligns with the theme styling.
+ *
+ * The component detects when the user scrolls and fades out a scroll-down indicator.
+ * It is highly responsive and adapts its content alignment and size based on the viewport.
  *
  * @param {HeroBannerProps} props - The props for the HeroBanner component.
  * @returns {JSX.Element} The rendered HeroBanner component.
@@ -67,21 +70,24 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
   align = "center",
   fullHeight = false,
 }) => {
-  const theme = useTheme();
-  const [hasScrolled, setHasScrolled] = useState(false);
+  const theme = useTheme(); // Get the current theme for styling
+  const [hasScrolled, setHasScrolled] = useState(false); // State to detect if the user has scrolled
 
-  // Detect user scroll and hide the scroll encourager
+  // Scroll event handler to detect when the user scrolls the page
   useEffect(() => {
+    // Use debounced or throttled scrolling to improve performance
     const handleScroll = (): void => {
       if (window.scrollY > 0) {
-        setHasScrolled(true);
+        setHasScrolled(true); // User has scrolled, hide the scroll encourager
       } else {
-        setHasScrolled(false);
+        setHasScrolled(false); // No scrolling yet, show the scroll encourager
       }
     };
 
+    // Add scroll event listener
     window.addEventListener("scroll", handleScroll);
 
+    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -90,81 +96,81 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
   return (
     <Box
       sx={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        padding: theme.spacing(8, 4),
-        textAlign: align,
-        color: theme.palette.common.white,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
+        backgroundImage: `url(${backgroundImage})`, // Set background image URL
+        backgroundSize: "cover", // Ensure background image covers the entire banner
+        backgroundPosition: "center", // Center the background image
+        padding: theme.spacing(8, 4), // Responsive padding using theme spacing
+        textAlign: align, // Align text based on the 'align' prop
+        color: theme.palette.common.white, // Ensure text is readable on dark backgrounds
+        display: "flex", // Flexbox to center content vertically and horizontally
+        flexDirection: "column", // Stack elements vertically
+        justifyContent: "center", // Center the content vertically
         alignItems:
           align === "center"
             ? "center"
             : align === "right"
-              ? "flex-end"
-              : "flex-start",
-        height: fullHeight ? "100dvh" : "25em",
-        position: "relative", // Important for positioning the scroll encourager
-        width: "100%",
+            ? "flex-end"
+            : "flex-start", // Align content based on the 'align' prop
+        height: fullHeight ? ['100vh', '100dvh'] : "25em", // Use 100vh or 100dvh for full height support
+        position: "relative", // Necessary for positioning the scroll encourager
+        width: "100%", // Make sure the banner takes up the full width
       }}
     >
-      {/* Main title */}
+      {/* Main title, using typography variants for responsive sizing */}
       <Typography variant="h2" gutterBottom>
         {title}
       </Typography>
 
-      {/* Optional subtitle */}
+      {/* Optional subtitle, conditionally rendered if provided */}
       {subtitle && (
         <Typography variant="h6" gutterBottom>
           {subtitle}
         </Typography>
       )}
 
-      {/* Optional CTA button */}
+      {/* Optional CTA button, conditionally rendered if provided */}
       {ctaText && (
         <Button
           variant="contained"
           color="primary"
-          onClick={onCtaClick}
-          sx={{ marginTop: theme.spacing(2) }}
+          onClick={onCtaClick} // Trigger CTA click handler
+          sx={{ marginTop: theme.spacing(2) }} // Add some margin for spacing
         >
           {ctaText}
         </Button>
       )}
 
-      {/* Animated scroll encourager */}
+      {/* Scroll encourager, displayed only when fullHeight is true */}
       {fullHeight && (
         <Box
           sx={{
-            position: "absolute",
-            bottom: theme.spacing(4),
-            display: "flex",
+            position: "absolute", // Position it at the bottom of the banner
+            bottom: theme.spacing(4), // Slight padding from the bottom
+            display: "flex", // Center horizontally
             justifyContent: "center",
             alignItems: "center",
-            width: "100%",
-            animation: `${bounceAnimation} 2s infinite`,
-            cursor: "pointer",
-            color: theme.palette.common.white,
+            width: "100%", // Take full width
+            animation: `${bounceAnimation} 2s infinite`, // Bounce animation
+            cursor: "pointer", // Indicate interactivity
+            color: theme.palette.common.white, // White text/icon color
             opacity: hasScrolled ? 0 : 1, // Fade out when user scrolls
-            transition: "opacity 0.5s ease-in-out", // Smooth fade effect
+            transition: "opacity 0.5s ease-in-out", // Smooth transition for fading
           }}
         >
-          {/* Desktop Scroll Encourager */}
+          {/* Scroll encourager for desktop view */}
           <Box
             sx={{
-              display: { xs: "none", md: "block" }, // Show only on desktop
+              display: { xs: "none", md: "block" }, // Show only on larger screens
             }}
           >
             <Typography variant="body1">Scroll Down</Typography>
             <KeyboardArrowDownIcon sx={{ fontSize: "2rem" }} />
           </Box>
 
-          {/* Mobile Scroll Encourager */}
+          {/* Scroll encourager for mobile view */}
           <Box
             sx={{
-              display: { xs: "block", md: "none" }, // Show only on mobile
+              display: { xs: "block", md: "none" }, // Show only on smaller screens
             }}
           >
             <KeyboardArrowDownIcon sx={{ fontSize: "3rem" }} />

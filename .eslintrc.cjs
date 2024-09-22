@@ -21,6 +21,7 @@ module.exports = {
     "next", // Keep the basic Next.js config without 'core-web-vitals'
     "plugin:import/recommended",
     "plugin:import/typescript",
+    "plugin:react-hooks/recommended" // Add this line
   ],
   settings: {
     "import/resolver": {
@@ -36,11 +37,11 @@ module.exports = {
   overrides: [
     {
       files: ["**/*.{js,jsx,ts,tsx}"],
-      plugins: ["react", "jsx-a11y", "prettier"],
+      plugins: ["react", "jsx-a11y", "prettier", "react-hooks"], // Add "react-hooks" here
       extends: [
         "plugin:react/recommended",
         "plugin:react/jsx-runtime",
-        "plugin:react-hooks/recommended",
+        "plugin:react-hooks/recommended", // Ensure this is included
         "plugin:jsx-a11y/recommended",
       ],
       settings: {

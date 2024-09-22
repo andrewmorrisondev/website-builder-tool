@@ -6,24 +6,28 @@
     "skipLibCheck": true,
     "strict": true,
     "esModuleInterop": true,
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "composite": true,
+    "plugins": [
+      {
+        "name": "@yarnpkg/pnpify"
+      }
+    ],
     "paths": {
-      "*": ["./node_modules/*"],
-      "@/*": ["./*"],
-      "@components/*": ["components/*"]
+      "@app/*": ["packages/*/app"], 
+      "@components/*": ["packages/components/*"]
     },
     "noEmit": true
   },
   "include": [
     "packages/*/**/*.ts",
     "packages/*/**/*.tsx",
-    "components/**/*", // Ensure this line includes your shared components
+    "packages/components/**/*", // Ensure this line includes your shared components
     ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules", "dist", "**/.next"]

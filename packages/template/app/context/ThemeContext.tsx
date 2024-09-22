@@ -14,10 +14,10 @@ interface ThemeContextProps {
   mode: "light" | "dark";
   toggleTheme: () => void;
   updateColors: (
-    primary: string,
-    secondary: string,
-    accent1: string,
-    accent2: string,
+    primary?: string,
+    secondary?: string,
+    accent1?: string,
+    accent2?: string,
   ) => void;
 }
 
@@ -33,50 +33,59 @@ interface ThemeProviderProps {
 
 export const CustomThemeProvider = ({
   children,
-}: ThemeProviderProps): JSX.Element => {
+}: ThemeProviderProps): JSX.Element | null => {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 
-  // State to manage mode and colors
+  // State to manage theme mode and colors
   const [mode, setMode] = useState<"light" | "dark">("light");
   const [primaryColor, setPrimaryColor] = useState("#1976d2"); // Default primary color
   const [secondaryColor, setSecondaryColor] = useState("#dc004e"); // Default secondary color
-  const [accentColor1, setAccentColor1] = useState(""); // New accent color state
-  const [accentColor2, setAccentColor2] = useState(""); // New accent color state
+  const [accentColor1, setAccentColor1] = useState("#ff4081"); // Default accent color
+  const [accentColor2, setAccentColor2] = useState("#7c4dff"); // Default accent color
   const [backgroundColor, setBackgroundColor] = useState(""); // Background color state
+  const [isMounted, setIsMounted] = useState(false); // Track if the component has mounted
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const savedPrimaryColor = localStorage.getItem("primaryColor");
-    const savedSecondaryColor = localStorage.getItem("secondaryColor");
-    const savedBackgroundColor = localStorage.getItem("backgroundColor");
-    const savedAccentColor1 = localStorage.getItem("accentColor1");
-    const savedAccentColor2 = localStorage.getItem("accentColor2");
+    // Check localStorage for saved theme preferences and colors
+    try {
+      const savedTheme = localStorage.getItem("theme");
+      const savedPrimaryColor = localStorage.getItem("primaryColor");
+      const savedSecondaryColor = localStorage.getItem("secondaryColor");
+      const savedBackgroundColor = localStorage.getItem("backgroundColor");
+      const savedAccentColor1 = localStorage.getItem("accentColor1");
+      const savedAccentColor2 = localStorage.getItem("accentColor2");
 
-    if (savedTheme) {
-      setMode(savedTheme as "light" | "dark");
-    } else {
-      setMode(prefersDarkMode ? "dark" : "light");
+      if (savedTheme) {
+        setMode(savedTheme as "light" | "dark");
+      } else {
+        setMode(prefersDarkMode ? "dark" : "light");
+      }
+
+      if (savedPrimaryColor) {
+        setPrimaryColor(savedPrimaryColor);
+      }
+
+      if (savedSecondaryColor) {
+        setSecondaryColor(savedSecondaryColor);
+      }
+
+      if (savedBackgroundColor) {
+        setBackgroundColor(savedBackgroundColor);
+      }
+
+      if (savedAccentColor1) {
+        setAccentColor1(savedAccentColor1);
+      }
+
+      if (savedAccentColor2) {
+        setAccentColor2(savedAccentColor2);
+      }
+    } catch (error) {
+      console.error("Failed to access localStorage", error);
     }
 
-    if (savedPrimaryColor) {
-      setPrimaryColor(savedPrimaryColor);
-    }
-
-    if (savedSecondaryColor) {
-      setSecondaryColor(savedSecondaryColor);
-    }
-
-    if (savedBackgroundColor) {
-      setBackgroundColor(savedBackgroundColor);
-    }
-
-    if (savedAccentColor1) {
-      setAccentColor1(savedAccentColor1);
-    }
-
-    if (savedAccentColor2) {
-      setAccentColor2(savedAccentColor2);
-    }
+    // Mark as mounted to prevent server/client mismatch
+    setIsMounted(true);
   }, [prefersDarkMode]);
 
   const toggleTheme = (): void => {
@@ -85,23 +94,31 @@ export const CustomThemeProvider = ({
     localStorage.setItem("theme", newMode);
   };
 
-  // Function to dynamically update colors and background color, now accepting accent colors
+  // Function to dynamically update colors and background color, now accepting optional accent colors
   const updateColors = (
-    primary: string,
-    secondary: string,
-    accent1: string,
-    accent2: string,
+    primary?: string,
+    secondary?: string,
+    accent1?: string,
+    accent2?: string,
   ): void => {
-    setPrimaryColor(primary);
-    setSecondaryColor(secondary);
-    setAccentColor1(accent1);
-    setAccentColor2(accent2);
-    setBackgroundColor(primary); // Use the primary color as the background
-    localStorage.setItem("primaryColor", primary);
-    localStorage.setItem("secondaryColor", secondary);
-    localStorage.setItem("backgroundColor", primary); // Save background color
-    localStorage.setItem("accentColor1", accent1);
-    localStorage.setItem("accentColor2", accent2);
+    if (primary) {
+      setPrimaryColor(primary);
+      setBackgroundColor(primary); // Use the primary color as the background
+      localStorage.setItem("primaryColor", primary);
+      localStorage.setItem("backgroundColor", primary);
+    }
+    if (secondary) {
+      setSecondaryColor(secondary);
+      localStorage.setItem("secondaryColor", secondary);
+    }
+    if (accent1) {
+      setAccentColor1(accent1);
+      localStorage.setItem("accentColor1", accent1);
+    }
+    if (accent2) {
+      setAccentColor2(accent2);
+      localStorage.setItem("accentColor2", accent2);
+    }
   };
 
   // Memoize the theme to optimize performance
@@ -117,8 +134,8 @@ export const CustomThemeProvider = ({
           backgroundPaper: mode === "light" ? "#ffffff" : "#424242",
           textPrimary: mode === "light" ? "#000000" : "#ffffff",
           textSecondary: mode === "light" ? "#5f5f5f" : "#e0e0e0",
-          accent1: accentColor1, // Add the accent colors
-          accent2: accentColor2, // Add the accent colors
+          accent1: accentColor1,
+          accent2: accentColor2,
         },
       }),
     [
@@ -128,8 +145,13 @@ export const CustomThemeProvider = ({
       backgroundColor,
       accentColor1,
       accentColor2,
-    ], // Keep them in the dependency array
+    ],
   );
+
+  // Prevent rendering until the component has mounted to avoid SSR/client mismatches
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <ThemeContext.Provider value={{ mode, toggleTheme, updateColors }}>

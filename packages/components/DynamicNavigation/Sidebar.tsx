@@ -2,6 +2,7 @@
 import React, { useState, useEffect, ReactNode } from "react";
 import { Drawer, Box } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close"; // Icon for close button
+import MenuIcon from "@mui/icons-material/Menu";
 import { CTAButton } from "@components/registry";
 
 // Interface for the Sidebar component props
@@ -35,6 +36,18 @@ const Sidebar = ({
   const toggleDrawer = toggleDrawerProp || defaultToggleDrawer;
 
   return (
+    <>
+                  {/* Menu button */}
+                  <CTAButton
+              icon={<MenuIcon />}
+              onClick={() => defaultToggleDrawer(true)}
+              sx={{
+                position: "fixed",
+                top: "1rem",
+                left: "1rem",
+                zIndex: 1000,
+              }}
+            ></CTAButton>
     <Drawer
       anchor="left"
       open={isDrawerOpen}
@@ -48,29 +61,30 @@ const Sidebar = ({
           boxSizing: "border-box",
         },
       }}
-    >
+      >
       <Box
         sx={{
           width: drawerWidth,
           padding: "1rem",
         }}
-      >
+        >
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
           }}
-        >
+          >
           <h3>Nothing to See here 👀</h3>
           <CTAButton
             icon={<CloseIcon />}
             onClick={() => toggleDrawer(true)}
-          ></CTAButton>
+            ></CTAButton>
         </Box>
         {children}
       </Box>
     </Drawer>
+            </>
   );
 };
 
