@@ -1,12 +1,11 @@
 {
   "builds": [
     {
-      "src": "packages/template/package.json",
-      "use": "@vercel/node",
-      "config": {
-        "installCommand": "yarn install",
-        "buildCommand": "make -f ./Makefile project PKG=packages/template"
-      }
+      "src": "package.json",
+      "use": "@vercel/node"
     }
-  ]
+  ],
+  "scripts": {
+    "build": "make project"
+  }
 }
