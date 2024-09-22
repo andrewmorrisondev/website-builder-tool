@@ -22,7 +22,6 @@ module.exports = {
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:react/recommended",
-    "plugin:react-hooks/recommended", // Ensure this is included
     "plugin:jsx-a11y/recommended",
   ],
   plugins: ["react", "jsx-a11y", "prettier", "react-hooks"], // Consolidate plugins here
