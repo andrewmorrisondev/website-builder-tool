@@ -5,12 +5,8 @@
     "rootDir": "../../../",
     "baseUrl": "../..",
     "paths": {
-      "@components/*": [
-        "packages/components/*"
-      ],
-      "@mui/*": [
-        "node_modules/@mui/*"
-      ]
+      "@components/*": ["../../components/*"],
+      "@mui/*": ["node_modules/@mui/*"]
     },
     "plugins": [
       {
