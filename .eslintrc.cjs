@@ -34,43 +34,54 @@ module.exports = {
       node: {
         extensions: [".js", ".jsx", ".ts", ".tsx"],
       },
-      react: {
-        version: "detect",
-      },
     },
-    formComponents: ["Form"],
-    linkComponents: [
-      { name: "Link", linkAttribute: "to" },
-      { name: "NavLink", linkAttribute: "to" },
-    ],
-  },
-  rules: {
-    "prettier/prettier": "error",
-    "react/prop-types": "off",
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "jsx-a11y/anchor-is-valid": [
-      "error",
-      {
-        components: ["Link"],
-        specialLink: ["to"],
-        aspects: ["invalidHref", "preferButton"],
-      },
-    ],
-    "jsx-a11y/label-has-associated-control": [
-      "error",
-      {
-        controlComponents: ["Input"],
-        assert: "either",
-        depth: 3,
-      },
-    ],
-    // Disable this rule since you're using the App Router
-    "next/no-html-link-for-pages": "off",
   },
   overrides: [
+    {
+      files: ["**/*.{js,jsx,ts,tsx}"],
+      plugins: ["react", "jsx-a11y", "prettier"],
+      extends: [
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:react-hooks/recommended",
+      ],
+      settings: {
+        react: {
+          version: "detect",
+        },
+        formComponents: ["Form"],
+        linkComponents: [
+          { name: "Link", linkAttribute: "to" },
+          { name: "NavLink", linkAttribute: "to" },
+        ],
+      },
+      rules: {
+        "prettier/prettier": "error",
+        "react/prop-types": "off",
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "jsx-a11y/anchor-is-valid": [
+          "error",
+          {
+            components: ["Link"],
+            specialLink: ["to"],
+            aspects: ["invalidHref", "preferButton"],
+          },
+        ],
+        "jsx-a11y/label-has-associated-control": [
+          "error",
+          {
+            controlComponents: ["Input"],
+            assert: "either",
+            depth: 3,
+          },
+        ],
+        // Disable this rule since you're using the App Router
+        "next/no-html-link-for-pages": "off",
+      },
+    },
     {
       files: ["**/*.{ts,tsx}"],
       plugins: ["@typescript-eslint", "import"],

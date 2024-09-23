@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "es6",
+    "module": "ESnext",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "declaration": true,
+    "sourceMap": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "noEmit": false, // Emit output files [DO NOT CHANGE]
+    "noEmitOnError": true, // Do not emit if there are errors [DO NOT CHANGE] 
+    "allowSyntheticDefaultImports": true,
+    "composite": true,
+  },
+  "private": true,
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "tsconfig.json", "dist"]
+}
