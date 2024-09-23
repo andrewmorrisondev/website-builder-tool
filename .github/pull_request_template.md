@@ -6,6 +6,31 @@
 
 ### Commit Messages
 
+- update makefile
+- updated vercel.json
+- update vercel config
+- update vercel config
+- attempt vercel build
+- upate vercel.json
+- update vercel.json
+- update vercel.json
+- add vercel.json
+- update package.json
+- update vercel build command
+- update workplace paths
+- uhhh
+- update PR
+- update package.json
+- Merge branch 'main' into draft
+- stop tracking .next build artifacts
+- update package tsconfig
+- Delete packages/template/.next directory (#10)
+- Draft (#8)
+- Delete packages/template/.next/build-manifest.json
+- Delete packages/template/.next/app-build-manifest.json
+- Delete packages/template/.next/BUILD_ID
+- Delete packages/template/.next/app-path-routes-manifest.json
+- add .next to gitignore
 - fix linting error
 - update pr template
 - fix sonarcloud flags

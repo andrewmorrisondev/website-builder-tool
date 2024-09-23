@@ -3,7 +3,7 @@
   "include": [
     "packages/*/**/*.ts",
     "packages/*/**/*.tsx",
-    "components/**/*", // Make sure components are included
+    "packages/components/**/*", // Update path to components
     ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules", "dist"]

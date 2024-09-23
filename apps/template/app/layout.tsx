@@ -1,0 +1,68 @@
+"use client";
+import "../globals.css";
+import Link from "next/link";
+import { useState } from "react";
+import { CssBaseline, Box } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Sidebar, CTAButton, Body } from "@website-builder-tool/components";
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>): JSX.Element {
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
+  const drawerWidth = 250;
+
+  const toggleDrawer = (open: boolean) => () => {
+    setDrawerOpen(open);
+  };
+
+  return (
+    <>
+      <html lang="en">
+        <body>
+            <CssBaseline />
+            {/* Sidebar */}
+            <Sidebar
+              isDrawerOpen={isDrawerOpen}
+              toggleDrawer={toggleDrawer}
+              drawerWidth={drawerWidth}
+            >
+              <Link href="/" passHref>
+                <CTAButton label="Home" variant="contained" color="primary" />
+              </Link>
+              <Link href="/about" passHref>
+                <CTAButton label="About" variant="outlined" color="secondary" />
+              </Link>
+            </Sidebar>
+
+            {/* Menu button */}
+            <CTAButton
+              icon={<MenuIcon />}
+              onClick={() => toggleDrawer(true)}
+              sx={{
+                position: "fixed",
+                top: "1rem",
+                left: "1rem",
+                zIndex: 1000,
+              }}
+            ></CTAButton>
+
+            {/* Main content */}
+            <Box
+              component="main"
+              sx={{
+                transition: "margin-left 0.3s ease",
+                marginLeft: isDrawerOpen ? `${drawerWidth}px` : 0,
+              }}
+            >
+              <Body isDrawerOpen={isDrawerOpen} drawerWidth={drawerWidth}>
+                {children}
+              </Body>
+            </Box>
+        </body>
+      </html>
+    </>
+  );
+}

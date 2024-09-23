@@ -21,7 +21,10 @@ module.exports = {
     "next", // Keep the basic Next.js config without 'core-web-vitals'
     "plugin:import/recommended",
     "plugin:import/typescript",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
   ],
+  plugins: ["react", "jsx-a11y", "prettier", "react-hooks"], // Consolidate plugins here
   settings: {
     "import/resolver": {
       typescript: {
@@ -41,7 +44,6 @@ module.exports = {
         "plugin:react/recommended",
         "plugin:react/jsx-runtime",
         "plugin:react-hooks/recommended",
-        "plugin:jsx-a11y/recommended",
       ],
       settings: {
         react: {

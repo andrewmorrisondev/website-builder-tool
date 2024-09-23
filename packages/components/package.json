@@ -1,0 +1,31 @@
+{
+  "name": "@website-builder-tool/components",
+  "version": "1.0.0",
+  "main": "dist/registry.js",
+  "types": "dist/registry.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/registry.js",
+      "require": "./dist/registry.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --build",
+    "watch": "tsc --build --watch"
+  },
+  "devDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.6.2"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

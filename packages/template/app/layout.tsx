@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { CustomThemeProvider } from "./context/ThemeContext";
 import { CssBaseline, Box } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
 import { Sidebar, CTAButton, Body } from "@components/registry";
 
 export default function RootLayout({
@@ -39,18 +38,6 @@ export default function RootLayout({
               </Link>
             </Sidebar>
 
-            {/* Menu button */}
-            <CTAButton
-              icon={<MenuIcon />}
-              onClick={() => toggleDrawer(true)}
-              sx={{
-                position: "fixed",
-                top: "1rem",
-                left: "1rem",
-                zIndex: 1000,
-              }}
-            ></CTAButton>
-
             {/* Main content */}
             <Box
               component="main"
@@ -69,3 +56,4 @@ export default function RootLayout({
     </>
   );
 }
+

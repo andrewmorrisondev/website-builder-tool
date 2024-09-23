@@ -1,30 +1,26 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "target": "ES2019",
+    "module": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
     "strict": true,
-    "esModuleInterop": true,
-    "module": "commonjs",
+    "jsx": "preserve",
     "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "composite": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "diagnostics": true,
     "paths": {
-      "*": ["./node_modules/*"],
-      "@/*": ["./*"],
-      "@components/*": ["components/*"]
-    },
-    "noEmit": true
+      "@website-builder-tool/components": ["./packages/components/src"]
+    }
   },
-  "include": [
-    "packages/*/**/*.ts",
-    "packages/*/**/*.tsx",
-    "components/**/*", // Ensure this line includes your shared components
-    ".next/types/**/*.ts"
+  "references": [
+    { "path": "./packages/components" },
+    { "path": "./apps/template" }
   ],
-  "exclude": ["node_modules", "dist", "**/.next"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "packages/**/*"],
+  "exclude": ["node_modules"]
 }

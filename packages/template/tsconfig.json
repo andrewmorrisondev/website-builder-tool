@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "../../../",
-    "baseUrl": ".",
+    "baseUrl": "../..",
     "paths": {
       "@components/*": ["../../components/*"],
       "@mui/*": ["node_modules/@mui/*"]
@@ -12,15 +12,19 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "jsx": "preserve"
   },
   "include": [
     "app/**/*.ts",
     "app/**/*.tsx", // Include TypeScript and TSX files from app directory
     "**/*.ts",
     "**/*.tsx", // Include other files in the same level, such as layout.tsx, page.tsx
-    "../../components/**/*",
+    "../../packages/components/**/*", // Update path to components
     ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "dist"]
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

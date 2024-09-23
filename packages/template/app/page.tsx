@@ -106,7 +106,7 @@ const Home: React.FC = () => {
       <HeroBanner
         title="Welcome to Our Company"
         subtitle="We create beautiful digital experiences"
-        backgroundImage="/web-avatar@2x.png" // Example background image
+        backgroundImage="url('/web-avatar@2x.png')" // Example background image
         ctaText="Learn More"
         onCtaClick={handleCtaClick}
         align="center" // Can be "left", "center", or "right"
